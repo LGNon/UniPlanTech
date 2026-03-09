@@ -1,0 +1,94 @@
+/* 기본 리셋 및 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; }
+ul, li { list-style: none; }
+a { text-decoration: none; color: inherit; display: block; }
+img { max-width: 100%; height: auto; vertical-align: middle; }
+
+/* 컬러 변수 */
+:root {
+    --main-green: #1a472a; /* Deep Green: 신뢰 */
+    --point-green: #8bc34a; /* Light Green: 생명, 기술 */
+    --txt-black: #333;
+    --txt-gray: #777;
+    --bg-light: #f9f9f9;
+}
+
+/* 헤더 */
+.header { position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); transition: 0.3s; background: rgba(0,0,0,0.1); }
+.header_inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 80px; padding: 0 20px; }
+.logo_txt { font-weight: 700; font-size: 24px; color: #fff; letter-spacing: 2px; text-transform: uppercase; }
+
+.header_right { display: flex; align-items: center; gap: 20px; }
+.langBox a { display: inline-block; color: rgba(255,255,255,0.7); font-size: 14px; margin-left: 10px; }
+.langBox a.on { color: #fff; font-weight: 700; }
+.btn_all_menu span { display: block; width: 25px; height: 2px; background: #fff; margin-bottom: 5px; }
+
+/* 메인 비주얼 */
+.visual { height: 100vh; position: relative; overflow: hidden; }
+.slider, .slider li { width: 100%; height: 100%; }
+.visu_txt_wrap { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; width: 100%; z-index: 10; padding: 0 20px; }
+.visu_txt strong { font-size: 60px; display: block; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; line-height: 1.2; }
+.visu_txt p { font-size: 20px; margin-bottom: 40px; font-weight: 300; color: rgba(255,255,255,0.8); }
+.visu_btn a { display: inline-block; padding: 15px 40px; border: 1px solid rgba(255,255,255,0.5); color: #fff; margin: 0 10px; transition: 0.3s; background: rgba(0,0,0,0.2); }
+.visu_btn a:hover { background: var(--point-green); border-color: var(--point-green); color: #fff; }
+
+@media (max-width: 768px) {
+    .visu_txt strong { font-size: 40px; }
+    .visu_txt p { font-size: 16px; }
+}
+
+/* 섹션 공통 */
+.mainWrap { position: relative; z-index: 20; background: #fff; }
+.mainSec { padding: 100px 0; }
+.inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.sec_tit { margin-bottom: 60px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; }
+.sec_tit .left { flex: 1; }
+.sec_tit h2 { font-size: 36px; color: var(--main-green); margin-bottom: 10px; font-weight: 700; }
+.sec_tit p { color: var(--txt-gray); font-size: 18px; font-weight: 300; }
+.txt_center { text-align: center; display: block; justify-content: center; }
+
+/* 버튼 스타일 */
+.light_Btn { background: #fff; color: var(--main-green); padding: 12px 25px; border-radius: 30px; font-size: 14px; border: 1px solid var(--main-green); transition: 0.3s; font-weight: 700; }
+.light_Btn:hover { background: var(--main-green); color: #fff; }
+
+/* 섹션 1: 사업분야 리스트 */
+.business_list { display: flex; gap: 20px; flex-wrap: wrap; }
+.business_list li { flex: 1; min-width: 280px; border-radius: 15px; overflow: hidden; background: var(--bg-light); transition: 0.3s; border: 1px solid #eee; }
+.business_list li:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); border-color: var(--point-green); }
+.business_list .img_box { height: 250px; overflow: hidden; background: #eee; display: flex; align-items: center; justify-content: center; }
+.business_list .img_box img { width: 100%; height: 100%; object-fit: cover; }
+.business_list .txt_box { padding: 30px; }
+.business_list .txt_box strong { font-size: 22px; color: var(--txt-black); display: block; margin-bottom: 12px; font-weight: 700; }
+.business_list .txt_box p { color: var(--txt-gray); font-size: 15px; line-height: 1.6; font-weight: 300; }
+
+/* 섹션 2: 글로벌 네트워크 (지도) */
+.mainSec2 { background: var(--bg-light); border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.network_map { margin-top: 50px; padding: 40px; background: #fff; border-radius: 20px; border: 1px solid #eee; }
+.map { max-width: 100%; height: auto; opacity: 0.9; }
+
+/* 섹션 4: 뉴스 (Swiper 스타일 커스텀) */
+.mainSec4 .inner { position: relative; }
+.news_card { background: #fff; padding: 40px; border-radius: 15px; border: 1px solid #eee; transition: 0.3s; height: auto; }
+.news_card:hover { border-color: var(--point-green); background: var(--bg-light); }
+.news_card strong { font-size: 20px; color: var(--txt-black); display: block; margin-bottom: 15px; line-height: 1.4; font-weight: 700; }
+.news_card p { color: var(--txt-gray); font-size: 15px; line-height: 1.7; margin-bottom: 25px; font-weight: 300; height: 75px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+.news_card .mb_date { font-size: 13px; color: #999; font-weight: 300; }
+.news_card .mb_arrow { float: right; font-size: 13px; color: var(--point-green); font-weight: 700; }
+
+/* Swiper 버튼 커스텀 */
+.mainSec4 .swiper-button-next, .mainSec4 .swiper-button-prev { color: var(--main-green); background: rgba(255,255,255,0.8); width: 50px; height: 50px; border-radius: 50%; border: 1px solid #eee; box-shadow: 0 5px 10px rgba(0,0,0,0.05); }
+.mainSec4 .swiper-button-next:after, .mainSec4 .swiper-button-prev:after { font-size: 20px; font-weight: 700; }
+
+/* 푸터 */
+.footer { background: #111; color: #999; padding: 80px 0; border-top: 4px solid var(--point-green); }
+.footer h2 { font-weight: 700; font-size: 22px; color: #fff; letter-spacing: 2px; margin-bottom: 25px; }
+.footer_info_wrap { display: flex; margin-bottom: 30px; border-top: 1px solid #333; padding-top: 30px; }
+.info_left li { margin-bottom: 8px; font-size: 14px; font-weight: 300; }
+.copy { font-size: 13px; color: #666; font-weight: 300; letter-spacing: 0.5px; }
+
+/* 모바일 대응 (간단) */
+@media (max-width: 1024px) {
+    .sec_tit { flex-direction: column; align-items: flex-start; }
+    .pc_only { display: none; }
+}

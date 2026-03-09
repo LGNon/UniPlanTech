@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+/* ================================================================
+    [1] Keyframes: 무한 반복 애니메이션
+    - 주로 메인 비주얼의 '스크롤 유도 아이콘' 등에 사용됩니다.
+    - 20px에서 40px 사이를 왕복하며 위아래로 움직이는 효과입니다.
+   ================================================================ */
+
+/* 구형 사파리 및 안드로이드 브라우저용 접두사 */
+@-webkit-keyframes scroll {
+    0%   { bottom: 20px; }
+    50%  { bottom: 40px; }
+    100% { bottom: 20px; }
+}
+
+/* 표준 브라우저용 (크롬, 엣지, 파이어폭스 등) */
+@keyframes scroll {
+    0%   { bottom: 20px; }
+    50%  { bottom: 40px; }
+    100% { bottom: 20px; }
+}
+
+
+/* ================================================================
+    [2] Scroll Animation Kits: 스크롤 시 등장 효과
+    - .ani: 요소의 초기 상태 (숨겨짐 + 위치 이동)
+    - .moving: 자바스크립트에 의해 추가되는 클래스 (보여짐 + 제자리 이동)
+   ================================================================ */
+
+/* --- X축 이동 (좌우 대칭 등장) --- */
+
+/* [Left -> Right] 왼쪽에서 오른쪽으로 등장 */
+.ani.x_Left {
+    opacity: 0;
+    transform: translateX(-40px); /* 왼쪽으로 40px 밀려난 상태 */
+    -webkit-transform: translateX(-40px);
+}
+
+.ani.x_Left.moving {
+    opacity: 1;
+    transform: translateX(0); /* 원래 위치로 복귀 */
+    -webkit-transform: translateX(0);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* [Right -> Left] 오른쪽에서 왼쪽으로 등장 */
+.ani.x_Right {
+    opacity: 0;
+    transform: translate(40px); /* 오른쪽으로 40px 밀려난 상태 */
+    -webkit-transform: translate(40px);
+}
+
+.ani.x_Right.moving {
+    opacity: 1;
+    transform: translate(0); /* 원래 위치로 복귀 */
+    -webkit-transform: translate(0);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+
+/* --- Y축 이동 (하단에서 위로 등장) --- */
+
+/* [Bottom -> Up] 아래에서 위로 등장 (가장 보편적인 효과) */
+.ani.y_Bottom {
+    opacity: 0;
+    transform: translateY(40px); /* 아래로 40px 밀려난 상태 */
+    -webkit-transform: translateY(40px);
+}
+
+.ani.y_Bottom.moving {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* 등장 속도 차이(Delay)를 주어 리듬감 생성 */
+.ani.y_Bottom.delay02 {
+    transition-delay: .2s;
+    -webkit-transition-delay: .2s;
+}
+.ani.y_Bottom.delay03 {
+    transition-delay: .4s;
+    -webkit-transition-delay: .4s;
+}
+
+
+/* --- 이미지 스케일 효과 (이미지가 작아지며 선명해짐) --- */
+
+.ani.scaleImg img {
+    opacity: 0;
+    transform: scale(1.2); /* 1.2배 커진 상태에서 대기 */
+    -webkit-transform: scale(1.2);
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+}
+
+.ani.scaleImg.moving img {
+    opacity: 1;
+    transform: scale(1); /* 원래 크기(1)로 축소되며 등장 */
+    -webkit-transform: scale(1);
+}
+
+
+/* --- 커버 효과 (흰색 막이 걷히며 이미지가 노출됨) --- */
+
+.ani.cover:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 101%;
+    background-color: #fff; /* 흰색 배경막 */
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1.4s ease-in-out;
+}
+
+.ani.cover.moving:after {
+    height: 0; /* 막이 아래에서 위로 걷힘 (또는 위에서 아래로) */
+}

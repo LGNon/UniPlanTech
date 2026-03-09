@@ -1,0 +1,348 @@
+@charset "utf-8";
+
+/* ================================================================
+    [1] 대형 모니터 및 노트북 구간 (1800px 이하)
+    - 전체 메뉴 레이어의 위치와 너비를 조정
+   ================================================================ */
+@media screen and (max-width:1800px){
+    .allMenuWrap{
+		right: -1300px;
+		width: 1083px;
+	}
+}
+
+/* [2] 일반 데스크톱 구간 (1660px 이하)
+    - 헤더의 너비를 유연하게(auto) 바꾸고 좌우 여백을 부여
+   ================================================================ */
+@media screen and (max-width:1660px){
+    .header_inner{
+        width: auto;
+        margin: 0 50px;
+    }
+}
+
+/* [3] 소형 데스크톱 및 태블릿 가로 (1400px 이하)
+    - 메인 콘텐츠 영역(.inner)에 좌우 여백 추가
+   ================================================================ */
+@media screen and (max-width:1400px){
+    .inner{
+        padding: 0 50px;
+    }
+}
+
+/* ================================================================
+    [4] 태블릿 및 모바일 전환 구간 (1280px 이하)
+    - 메뉴 시스템이 '모바일 전용'으로 대폭 변경되는 구간
+   ================================================================ */
+@media screen and (max-width:1280px){
+    .header{
+        padding-top: 0;
+    }
+    .header_inner{
+        margin: 0 30px;
+    }
+    /* 메뉴 레이어를 화면 가득(100%) 채움 */
+    .allMenuWrap{
+        width: 100%;
+    }
+    /* 로고와 언어박스를 메뉴보다 위로 올림 (z-index) */
+    .langBox{
+        position: relative;
+        z-index: 6;
+    }
+    .header.active .langBox a{
+        color: #000;
+    }
+    h1.logo{
+        z-index: 6;
+    }
+    /* 메뉴 활성화 시 로고 색상 강제 변경 */
+    .header.active .header_inner h1 img.white{
+        opacity: 0;
+    }
+    .header.active .header_inner h1 img.color{
+        opacity: 1;
+    }
+    /* 모바일 메뉴 내부 스타일: 세로 정렬 및 아코디언 메뉴 준비 */
+    .header.active .allMenuBg{
+        visibility: hidden;
+    }
+    .allMenu_inner{
+        padding: 0 30px;
+        overflow-y: auto; /* 내용이 길면 내부 스크롤 발생 */
+    }
+    .depth1{
+        flex-direction: column; /* 메뉴를 세로로 나열 */
+    }
+    .depth1>li{
+        font-size: 36px;
+        line-height: 80px;
+        border-bottom: 1px solid #dcdcdc;
+    }
+    .depth1>li>a{
+        display: none; /* 기존 PC용 링크 숨김 */
+    }
+    .depth1>li>span{
+        display: block;
+        font-size: 36px;
+        line-height: 80px;
+        cursor: pointer;
+        position: relative;
+        border-bottom: 1px solid #dcdcdc;
+    }
+    /* 아코디언 메뉴 화살표(V자) 생성 */
+    .depth1>li>span::before{
+        content: "";
+        position: absolute;
+        display: block;
+        right: 0;
+        border-top: 6px solid#000;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        top: 50%;
+        transition: all 0.2s ease-in-out;
+    }
+    /* 메뉴 클릭 시(.On) 화살표 회전 및 색상 변경 */
+    .depth1>li.On>span::before{
+        border-top: 6px solid #007ac3;
+        transform: rotate(180deg);
+    }
+    /* 서브 메뉴(.depth2) 초기화: 기본 숨김 및 배경색 지정 */
+    .depth1 .depth2{
+        display: none;
+        background-color: #f8f8f8;
+        width: auto;
+        margin-top: 0;
+        padding: 20px;
+    }
+    .depth1 .depth2>li{
+        margin-bottom: 0;
+        line-height: 42px;
+    }
+    .depth1 .depth2>li>a{
+        font-size: 24px;
+    }
+    .depth1 .depth3 li{
+        line-height: 32px;
+    }
+    .depth1 .depth3 a{
+        font-size: 18px;
+    }
+}
+
+/* ================================================================
+    [5] 스마트폰 세로 구간 (767px 이하)
+    - 크기 축소 및 레이아웃을 한 줄(세로)로 재배치
+   ================================================================ */
+@media screen and (max-width:767px){
+    /* 헤더 및 로고 크기 축소 */
+    .header{
+        height: 60px;
+        padding-top: 15px;
+    }
+    h1.logo img{
+		height: 18px;
+	}
+	.langBox a{
+		line-height: 60px;
+	}
+    .btn_all_menu{
+		width: 22px;
+		height: 16px;
+	}
+    /* 메인 비주얼 텍스트 정렬 변경 */
+    .visu_txt_wrap{
+        left: 20px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .visu_nav{
+        position: static;
+        left: auto;
+        right: auto;
+        align-self: flex-start;
+        margin-top: 80px;
+    }
+    .visu_txt_wrap strong{
+        font-size: 35px;
+        line-height: 39px;
+    }
+    .visu_txt_wrap p{
+        margin-top: 27px;
+    }
+    .visu_btn{
+        margin-top: 40px;
+    }
+    .visu_btn a{
+        width: 132px;
+        padding: 0 10px;
+        font-size: 11px;
+        line-height: 32px;
+    }
+    .icon_scroll{
+        width: 15px;
+    }
+
+    /* 섹션 공통 여백 축소 */
+    .mainSec{
+        padding: 64px 0;
+    }
+    .inner{
+        padding: 0 20px;
+    }
+    .sec_tit{
+        height: auto;
+        margin-bottom: 20px;
+    }
+    a.pc_only{
+        display: none; /* 모바일에서 불필요한 PC 전용 버튼 숨김 */
+    }
+    /* 비즈니스 리스트 간격 조정 */
+    .mainSec1{
+        padding: 64px 0 220px;
+    }
+    .business_list li{
+        margin-top: 30px;
+        width: calc(50% - 15px);
+    }
+    .business_list li:nth-child(2n){
+        margin-left: 30px;
+    }
+    /* 글로벌 네트워크 섹션: 요소를 세로로 재배치 */
+    .mainSec2 .inner{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .mainSec2 .sec_tit{
+        margin-bottom: 0;
+    }
+    .sec2_btn_wrap{
+        width: 80%;
+        order: 2; /* 텍스트 아래로 순서 변경 */
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+    }
+    .sec2_btn_wrap a + a{
+        margin-left: 0;
+    }
+    .sec2_btn_wrap a:nth-child(2n){
+        margin-left: -1px; /* 버튼 2줄 배치 */
+    }
+    .sec2_btn_wrap a:nth-child(3),
+    .sec2_btn_wrap a:nth-child(4){
+        margin-top: -1px;
+    }
+    .mainSec2 .img_box{
+        position: relative;
+        order: 1; /* 이미지 순서를 위로 올림 */
+        margin-bottom: 130px;
+    }
+    .mainSec2 .img_box img{
+        max-width: 900px;
+        width: auto;
+        left: calc(50% - 450px);
+        position: absolute;
+        top: 20%;
+    }
+    /* 뉴스 슬라이더 및 하단 리스트 조정 */
+    .sec4_list li span.mb_date{
+		margin-top:75px;
+	}
+    .swiper{
+        overflow: visible;
+    }
+    .swiper-button-next{
+        display: none; /* 모바일은 스와이프로 조작하므로 화살표 숨김 */
+    }
+    .swiper-button-prev{
+        display: none; /* 모바일은 스와이프로 조작하므로 화살표 숨김 */
+    }
+    /* 하단 퀵링크 세로 정렬 */
+    .sec5_list{
+		flex-direction: column;
+		align-items: center;
+        justify-content: center;
+	}
+	.sec5_list li + li:after{ /* 구분선을 가로선으로 변경 */
+    width: 130px;
+    height: 1px;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+	.sec5_list li +li {
+		margin-top: 50px;
+	}
+    /* 푸터 레이아웃 모바일 최적화 */
+    .footer .inner{
+        position: relative;
+        padding-top: 55px;
+    }
+    .footer .left{
+        width: 100%;
+    }
+    .footer_info_wrap{
+        flex-direction: column;
+        width: 100%;
+    }
+    .footer_btn{
+        position: absolute;
+        margin-top: 0;
+        right: 20px;
+        top: 20px;
+    }
+    .footer_info_wrap>ul{
+        padding: 20px 0;
+    }
+    .footer_info_wrap>ul.info_left{
+        margin-right: 0;
+        padding-right: 0;
+    }
+    .sec5_list li{
+        width: 70%;
+    }
+    .mainBtn{
+        font-size: 13px;
+    }
+}
+/* [6] 초소형 스마트폰 구간 (599px ~ 350px 이하)
+    - 아주 작은 화면에서도 버튼이나 로고가 깨지지 않도록 미세 조정
+   ================================================================ */
+@media screen and (max-width:599px){
+    .header{
+        height: 50px;
+    }
+    .header_inner{
+        margin: 0 15px;
+    }
+    .header_right{
+        width: auto;
+    }
+    .langBox{
+        padding-right: 20px;
+    }
+    .langBox a{
+        line-height: 50px;
+    }
+    .mainBtn{
+        width: 150px;
+    }
+}
+
+@media screen and (max-width:435px){
+    .mainBtn{
+        width: 120px;
+    }    
+}
+
+@media screen and (max-width:350px){
+    /* 350px 이하에서는 버튼들 사이의 겹침/마진을 더 촘촘하게 조정 */
+    .sec2_btn_wrap a:nth-child(2n){
+        margin: -1px 0 0;
+    }
+    .sec2_btn_wrap a:nth-child(3){
+        margin: -1px 0 0;
+    }
+}
