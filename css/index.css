@@ -64,7 +64,7 @@ img { max-width: 100%; height: auto; vertical-align: middle; }
 
 /* 섹션 2: 글로벌 네트워크 (지도) */
 .mainSec2 { background: var(--bg-light); border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
-.network_map { margin-top: 50px; padding: 40px; background: #fff; border-radius: 20px; border: 1px solid #eee; }
+.network_map { margin-top: 50px; padding: 40px; background: #d4d4d4; border-radius: 20px; border: 1px solid #eee; }
 .map { max-width: 100%; height: auto; opacity: 0.9; }
 
 /* 섹션 4: 뉴스 (Swiper 스타일 커스텀) */
