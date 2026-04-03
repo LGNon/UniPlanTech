@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+/* 기술연구소 리스트 */
+.lab_list {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    margin-top: 60px;
+}
+
+.lab_item {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+/* 짝수 번째 아이템은 좌우 반전 (지그재그 레이아웃) */
+.lab_item.reverse {
+    flex-direction: row-reverse;
+}
+
+.lab_img {
+    flex: 1.2;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.lab_img img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.lab_item:hover .lab_img img {
+    transform: scale(1.05);
+}
+
+.lab_txt {
+    flex: 0.8;
+}
+
+.lab_txt .num {
+    font-size: 50px;
+    font-weight: 800;
+    color: var(--point-green);
+    opacity: 0.3;
+    display: block;
+    margin-bottom: -10px;
+}
+
+.lab_txt h3 {
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.lab_txt p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+
+/* 반응형 모바일 */
+@media (max-width: 1024px) {
+    .lab_item, .lab_item.reverse {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .lab_img, .lab_txt {
+        width: 100%;
+    }
+    .lab_img img {
+        height: 300px;
+    }
+    .lab_txt {
+        text-align: center;
+    }
+}

@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+/* 상표 리스트 스타일 */
+.brand_list {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    margin-top: 50px;
+}
+
+.brand_item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* 이미지 박스 (로고 디자인 + 등록증) */
+.brand_visual_box {
+    flex: 1.2;
+    display: flex;
+    gap: 20px;
+}
+
+.brand_visual_box > div {
+    flex: 1;
+    background: #fcfcfc;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.brand_visual_box img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.brand_visual_box p {
+    font-size: 14px;
+    color: #999;
+}
+
+/* 텍스트 정보 */
+.brand_txt_box {
+    flex: 0.8;
+}
+
+.brand_txt_box .tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background: var(--bg-light);
+    color: var(--main-green);
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.brand_txt_box h3 {
+    font-size: 30px;
+    color: #111;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.brand_txt_box .brand_desc {
+    font-size: 17px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    word-break: keep-all;
+}
+
+.brand_txt_box .info_list {
+    border-top: 1px solid #eee;
+    padding-top: 25px;
+}
+
+.brand_txt_box .info_list li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.brand_txt_box .info_list li strong {
+    color: #000;
+    margin-right: 15px;
+}
+
+/* 반응형 */
+@media (max-width: 1100px) {
+    .brand_item {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .brand_visual_box, .brand_txt_box {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .brand_visual_box {
+        flex-direction: column;
+    }
+    .brand_visual_box img {
+        height: auto;
+    }
+}
