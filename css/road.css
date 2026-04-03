@@ -1,0 +1,147 @@
+@charset "utf-8";
+
+/* --- 1. 서브 비주얼 --- */
+.road_visual {
+    width: 100%;
+    height: 450px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/sub_visual_road.jpg') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+/* --- 2. 탭 메뉴 스타일 --- */
+.road_tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.tab_btn {
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #666;
+}
+
+.tab_btn.active {
+    background: var(--main-green);
+    color: #fff;
+    border-color: var(--main-green);
+    box-shadow: 0 10px 20px rgba(40, 167, 69, 0.2);
+}
+
+/* --- 3. 위치 정보 콘텐츠 --- */
+.location_info {
+    display: none; /* 기본 숨김 */
+    animation: fadeIn 0.5s ease;
+}
+
+.location_info.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.map_box {
+    width: 100%;
+    height: 450px; /* 지도의 높이 설정 */
+    background: #eee;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    overflow: hidden; /* 테두리 곡선 밖으로 나가는 지도 숨김 */
+    position: relative; /* 자식 요소 배치를 위한 기준 */
+}
+
+/* iframe이 부모 요소를 꽉 채우도록 설정 */
+.map_box iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+    display: block; /* 하단 미세 공백 제거 */
+}
+
+.map_placeholder {
+    width: 100%;
+    height: 100%;
+}
+
+.info_box {
+    display: flex;
+    gap: 100px;
+    padding: 40px;
+    background: #fbfdfc;
+    border-radius: 25px;
+    border: 1px solid #edf3ef;
+}
+
+.loc_name {
+    flex: 0 0 250px;
+}
+
+.loc_name span {
+    font-size: 14px;
+    color: var(--main-green);
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.loc_name h3 {
+    font-size: 32px;
+    color: #111;
+}
+
+.contact_list {
+    flex: 1;
+}
+
+.contact_list li {
+    display: flex;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.contact_list li:last-child { border: none; }
+
+.contact_list li strong {
+    width: 120px;
+    font-size: 16px;
+    color: #333;
+}
+
+.contact_list li span {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* --- 4. 반응형 --- */
+@media (max-width: 1024px) {
+    .info_box {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px;
+    }
+    .loc_name { flex: none; }
+    .tab_btn { padding: 12px 25px; font-size: 16px; }
+}
+
+@media (max-width: 640px) {
+    .road_tabs { flex-direction: column; }
+    .map_box { height: 300px; } /* 모바일에서는 지도를 조금 더 낮게 조절 */
+    .contact_list li { flex-direction: column; gap: 5px; }
+    .contact_list li strong { width: 100%; }
+}

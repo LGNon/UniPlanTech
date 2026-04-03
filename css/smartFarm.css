@@ -1,0 +1,163 @@
+@charset "utf-8";
+
+/* --- 1. 서브 비주얼 --- */
+.smart_visual {
+    width: 100%;
+    height: 450px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/sub_visual_smartfarm.jpg') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+/* --- 2. 스마트팜 컨셉 --- */
+.smart_concept {
+    padding: 120px 0;
+}
+
+.concept_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    align-items: center;
+}
+
+.concept_grid .txt_box .sub_tit {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--main-green);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.concept_grid .txt_box h2 {
+    font-size: 42px;
+    line-height: 1.3;
+    color: #111;
+    margin-bottom: 30px;
+}
+
+.concept_grid .txt_box p {
+    font-size: 17px;
+    color: #666;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+
+.concept_grid .img_box img {
+    width: 100%;
+    border-radius: 40px 0 40px 0; /* 독특한 곡선미 */
+    box-shadow: 30px 30px 60px rgba(0,0,0,0.1);
+}
+
+/* --- 3. 핵심 기술 (카드형) --- */
+.smart_tech {
+    background: #f4f9f5;
+}
+
+.tech_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.tech_card {
+    background: #fff;
+    padding: 50px 35px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.tech_card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(40, 167, 69, 0.1);
+}
+
+.tech_card .icon {
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+.tech_card h3 {
+    font-size: 22px;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.tech_card p {
+    font-size: 15px;
+    color: #777;
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+/* --- 4. 특장점 (와이드 배너형) --- */
+.smart_feature {
+    padding: 100px 0;
+}
+
+.feature_wrap {
+    background: linear-gradient(135deg, #1d4325 0%, #28a745 100%);
+    padding: 80px;
+    border-radius: 40px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature_wrap::after {
+    content: 'SMART';
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    font-size: 150px;
+    font-weight: 900;
+    opacity: 0.05;
+}
+
+.feature_txt h3 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.feature_list li {
+    margin-bottom: 25px;
+    font-size: 18px;
+    opacity: 0.9;
+    display: flex;
+    gap: 15px;
+}
+
+.feature_list li strong {
+    color: #fff;
+    min-width: 160px;
+    border-right: 1px solid rgba(255,255,255,0.3);
+}
+
+/* --- 5. 반응형 --- */
+@media (max-width: 1024px) {
+    .concept_grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .tech_list {
+        grid-template-columns: 1fr;
+    }
+    .feature_wrap {
+        padding: 50px 30px;
+    }
+}
+
+@media (max-width: 640px) {
+    .concept_grid .txt_box h2 { font-size: 30px; }
+    .feature_list li { flex-direction: column; gap: 5px; }
+    .feature_list li strong { border: none; }
+}
