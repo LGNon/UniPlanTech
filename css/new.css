@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+/* --- 1. 서브 비주얼 --- */
+.new_visual {
+    width: 100%;
+    height: 450px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/sub_visual_news.jpg') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+/* --- 2. 뉴스 그리드 레이아웃 --- */
+.news_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.news_card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    transition: 0.4s;
+    border: 1px solid #f0f0f0;
+}
+
+.news_card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(40, 167, 69, 0.15);
+}
+
+.news_card .img_box {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.news_card .img_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s;
+}
+
+.news_card:hover .img_box img {
+    transform: scale(1.1);
+}
+
+.news_card .tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--main-green);
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.news_card .txt_box {
+    padding: 30px;
+}
+
+.news_card h3 {
+    font-size: 20px;
+    color: #111;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    /* 말줄임표 처리 (2줄) */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news_card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news_card .date {
+    font-size: 14px;
+    color: #999;
+}
+
+/* --- 3. 반응형 --- */
+@media (max-width: 1024px) {
+    .news_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 640px) {
+    .news_grid {
+        grid-template-columns: 1fr;
+    }
+    .news_card .img_box { height: 200px; }
+    .sec_tit h2 { font-size: 28px; }
+}
