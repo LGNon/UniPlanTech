@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/menu.js"></script>
 </head>
+
 <body>
 
     <header class="header">
@@ -44,27 +46,22 @@
                 <li>
                     <a href="technology.html">사업 정보</a>
                     <ul class="depth2">
-                        <li><a href="culture.html">조직배양</a></li>
-                        <li><a href="upbringing.html">품종육성</a></li>
-                        <li><a href="smartFarm.html">스마트팜</a></li>
+                        <li><a href="culture.html">팔레놉시스(호접란)</a></li>
+                        <li><a href="smartFarm.html">스마트팜용 크린 플랜츠(고추냉이)</a></li>
                         <li><a href="aponicGarden.html">아포닉가든</a></li>
-                        <li><a href="breed.html">대표 품종</a></li>
-                        <li><a href="patent.html">특허</a></li>
-                        <li><a href="apply.html">출원</a></li>
-                        <li><a href="brand.html">상표</a></li>
+                        <li><a href="oem.html">주문자 위탁 생산(OEM)</a></li>
+                        <li>
+                            <a href="upbringing.html">연구개발</a>
+                            <ul class="depth3">
+                                <li><a href="patent.html">특허</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">최근 소식</a>
                     <ul class="depth2">
                         <li><a href="news.html">언론보도</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">주요 활동</a>
-                    <ul class="depth2">
-                        <li><a href="global.html">글로벌 네트워크</a></li>
-                        <li><a href="social.html">사회공헌</a></li>
                     </ul>
                 </li>
                 <li>
@@ -101,7 +98,7 @@
                         <span class="sub_tit">Nature in the Room</span>
                         <h2>아포닉가든이란?</h2>
                         <p>
-                            유니플랜텍만의 기술과 <strong>아쿠아포닉스(Aquaponics)</strong>라는 수경재배 기술을 결합한 실내 관상정원입니다. 
+                            유니플랜텍만의 기술과 <strong>아쿠아포닉스(Aquaponics)</strong>라는 수경재배 기술을 결합한 실내 관상정원입니다.
                             물고기의 배설물을 식물이 정화하는 자연적 순환 원리를 활용하여 친환경적인 생태계를 구축합니다.
                         </p>
                         <div class="cycle_summary">
@@ -145,6 +142,60 @@
                     </div>
                 </div>
             </div>
+
+            <div class="patent-section ani">
+                <h3 class="patent-title">🛠️ 연관 특허 정보</h3>
+                <div class="patent-container">
+                    <div class="patent-card" onclick="openPatentModal('아포닉가든', '제 10-2940654 호', 'img/patent1.png')">
+                        <div class="patent-badge">특허 등록</div>
+                        <h4 class="patent-name">아포닉가든</h4>
+                        <p class="patent-number">제 10-2940654 호</p>
+                        <span class="view-btn">증빙 확인하기 →</span>
+                    </div>
+
+                    <div class="patent-card no-click">
+                        <div class="patent-badge color-point">특허 출원</div>
+                        <h4 class="patent-name">아포닉 가든 및 아포닉 가든에 사용되는 여과재 조성물</h4>
+                        <p class="patent-number">제 10-2023-0110160 호</p>
+                        <span class="view-btn-disabled">심사 중</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="patentModal" class="patent-modal" onclick="closePatentModal()">
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <span class="modal-close" onclick="closePatentModal()">&times;</span>
+                    <h3 id="modalTitle" class="modal-title">특허명</h3>
+                    <p id="modalNumber" class="modal-number">특허번호</p>
+                    <div class="modal-body">
+                        <img id="modalImage" src="" alt="특허증 이미지">
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // 특허 팝업 열기 함수
+                function openPatentModal(title, number, imageSrc) {
+                    document.getElementById('modalTitle').innerText = title;
+                    document.getElementById('modalNumber').innerText = number;
+                    document.getElementById('modalImage').src = imageSrc;
+
+                    // 모달창 띄우기 및 본문 스크롤 막기
+                    const modal = document.getElementById('patentModal');
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                // 특허 팝업 닫기 함수
+                function closePatentModal() {
+                    const modal = document.getElementById('patentModal');
+                    modal.classList.remove('active');
+
+                    // 본문 스크롤 원상복구
+                    document.body.style.overflow = 'auto';
+                }
+            </script>
+
         </section>
 
         <section class="aponic_filter mainSec">
@@ -161,7 +212,7 @@
                         </ul>
                     </div>
                     <div class="img_box">
-                        <img src="img/aponic_filter_detail.jpg" alt="아포닉 필터 구조">
+                        <img src="img/aponicfillter.png" alt="아포닉 필터 구조">
                     </div>
                 </div>
             </div>
@@ -183,4 +234,5 @@
     </footer>
 
 </body>
+
 </html>

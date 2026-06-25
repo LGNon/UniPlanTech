@@ -1,0 +1,245 @@
+@charset "utf-8";
+
+/* ==========================================
+   유니플랜텍 주문자 위탁 생산(OEM) 전용 스키마
+   ========================================== */
+
+/* 1. 비주얼 영역 차별화 (OEM 전용 그래디언트 및 높이 조절) */
+.oem_visual {
+    position: relative;
+    height: 480px; /* 기존 스마트팜 비주얼과 높이감 차별화 */
+    background: linear-gradient(135deg, rgba(23, 43, 27, 0.85), rgba(46, 94, 55, 0.6)), url('../img/oem_visual.jpg') no-repeat center center / cover !important;
+}
+
+.oem_visual .visu_txt strong {
+    font-size: 42px;
+    letter-spacing: -0.5px;
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.oem_visual .visu_txt p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+}
+
+/* 2. 섹션 1: 특허 기술 가독성 컴포넌트 */
+.concept_grid .txt_box {
+    padding-right: 30px;
+}
+
+/* 특허 박스 리디자인 (신뢰감 있는 인증서/서류 테마) */
+.patent_container {
+    background-color: #fcfdfe;
+    border: 1px solid #e1e8e2;
+    border-left: 5px solid var(--main-green);
+    padding: 24px 28px !important;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    margin-top: 35px;
+}
+
+.patent_container h3 {
+    font-size: 17px !important;
+    color: #222 !important;
+    margin-bottom: 12px !important;
+    letter-spacing: -0.5px;
+}
+
+.patent_container ul li {
+    font-size: 14.5px !important;
+    color: #555 !important;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+}
+
+.patent_container ul li strong {
+    color: var(--main-green);
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+
+/* 3. 섹션 2: 작물 안내 카드 컴포넌트 전면 리디자인 */
+.smart_tech {
+    background-color: #f4f7f4 !important; /* 스마트팜과 다른 부드러운 톤 */
+    padding: 90px 0;
+}
+
+/* 카드 리스트 배치 컨테이너 */
+.smart_tech .tech_list {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 24px 0; /* 카드 간격 확보 */
+    margin-top: 50px;
+}
+
+/* 개별 카드 리디자인 (스마트팜의 투박한 스타일 탈피) */
+.smart_tech .tech_card {
+    display: table-cell;
+    vertical-align: top;
+    background: #ffffff;
+    padding: 40px 30px 35px 30px !important;
+    border-radius: 12px !important;
+    border: 1px solid #e7ebe7 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02) !important;
+    position: relative;
+    top: 0;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+}
+
+/* 카드 상단에 유니플랜텍 고유의 브랜드 포인트 바 추가 */
+.smart_tech .tech_card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--main-green);
+}
+
+/* 마우스 오버 시 입체적인 애니메이션 */
+.smart_tech .tech_card:hover {
+    top: -10px;
+    box-shadow: 0 15px 30px rgba(46, 94, 55, 0.12) !important;
+    border-color: rgba(46, 94, 55, 0.2) !important;
+}
+
+/* 카드 내 이모지 원형 아이콘 베이스 */
+.smart_tech .tech_card .icon {
+    width: 60px;
+    height: 60px;
+    background: #eef4ee;
+    border-radius: 50%;
+    display: block;
+    text-align: center;
+    line-height: 60px;
+    font-size: 26px !important;
+    margin: 0 auto 25px auto !important;
+    transition: background 0.3s;
+}
+
+.smart_tech .tech_card:hover .icon {
+    background: var(--point-green);
+    color: #fff;
+}
+
+/* 카드 타이틀 설정 */
+.smart_tech .tech_card h3 {
+    font-size: 20px !important;
+    color: #111 !important;
+    font-weight: 700 !important;
+    margin-bottom: 0px !important;
+    text-align: center;
+}
+
+/* 세부 주문 정보 리스트 스타일 구조화 */
+.smart_tech .tech_card .info_spec {
+    margin-top: 20px;
+    border-top: 1px solid #edf1ed !important;
+    padding-top: 20px !important;
+}
+
+.smart_tech .tech_card .info_spec li {
+    font-size: 14px;
+    color: #666;
+    line-height: 2.2;
+    list-style: none;
+    text-align: left;
+}
+
+.smart_tech .tech_card .info_spec li strong {
+    color: #222;
+    font-weight: 500;
+    display: inline-block;
+    width: 80px; /* 항목 이름 너비 고정으로 대시보드처럼 정렬 */
+}
+
+
+/* 4. 섹션 3: 차별성 특장점 영역 스타일 고도화 */
+.smart_feature {
+    padding: 100px 0;
+}
+
+.smart_feature .feature_wrap {
+    background: #ffffff !important;
+    border: 1px solid #eef2ee;
+    border-radius: 16px;
+    padding: 50px 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+}
+
+.smart_feature .feature_txt h3 {
+    font-size: 24px !important;
+    color: #111;
+    font-weight: 700;
+    margin-bottom: 35px;
+    text-align: center;
+    position: relative;
+}
+
+/* 타이틀 하단 데코레이션 선 스타일 변경 */
+.smart_feature .feature_txt h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--point-green);
+    margin: 12px auto 0 auto;
+}
+
+/* 특징 리스트 가로 폭 보정 및 가독성 향상 */
+.smart_feature .feature_list li {
+    font-size: 15px !important;
+    color: #555 !important;
+    line-height: 1.8 !important;
+    margin-bottom: 18px !important;
+    padding-left: 24px !important;
+    background: none !important;
+    position: relative;
+}
+
+/* 투박한 점 대신 세련된 포인트 그린 원형 불릿 추가 */
+.smart_feature .feature_list li::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    background: var(--point-green);
+    border-radius: 50%;
+}
+
+.smart_feature .feature_list li strong {
+    color: var(--main-green) !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.img_box {
+    padding: 50px 0;
+}
+
+/* 반응형 모바일 대응 */
+@media screen and (max-width: 1024px) {
+    .smart_tech .tech_list {
+        display: block;
+    }
+    .smart_tech .tech_card {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .oem_visual {
+        height: 360px;
+    }
+}

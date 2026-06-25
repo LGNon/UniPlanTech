@@ -166,6 +166,193 @@
     top: -5px;
 }
 
+.patent-section {
+    margin: 50px auto;
+    padding: 0 20px;
+    max-width: 1200px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.patent-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--main-green, #1b4d3e);
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.patent-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--point-green, #2ecc71);
+}
+.patent-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.patent-card {
+    flex: 1;
+    min-width: 280px;
+    background: #f9fbf9;
+    border: 1px solid #e2eee2;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
+    position: relative;
+}
+.patent-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(27, 77, 62, 0.08);
+    background: #fff;
+    border-color: var(--point-green, #2ecc71);
+}
+.patent-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--main-green, #1b4d3e);
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+.patent-badge.color-point {
+    background-color: var(--point-green, #2ecc71);
+}
+.patent-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    word-break: keep-all;
+}
+.patent-number {
+    font-size: 14px;
+    color: #666;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+.view-btn {
+    font-size: 13px;
+    color: var(--main-green, #1b4d3e);
+    font-weight: 600;
+    display: inline-block;
+    transition: color 0.2s;
+}
+.patent-card:hover .view-btn {
+    color: var(--point-green, #2ecc71);
+}
+
+/* --- 모달 팝업 스타일 --- */
+.patent-modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 배경 어둡게 */
+    z-index: 9999; /* 최상단 배치 */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    backdrop-filter: blur(3px); /* 배경 약간 흐리게 처리 */
+}
+/* 모달이 열렸을 때 클래스 활성화용 스타일 */
+.patent-modal.active {
+    display: flex;
+}
+.modal-content {
+    background-color: #fff;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 550px; /* 특허증 창 최대 너비 */
+    max-height: 90vh; /* 브라우저 높이의 90% 제한 */
+    padding: 35px 25px 25px 25px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    animation: fadeInModal 0.3s ease-out;
+}
+@keyframes fadeInModal {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.modal-close:hover {
+    color: #333;
+}
+.modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 5px;
+    padding-right: 20px;
+    word-break: keep-all;
+}
+.modal-number {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+.modal-body {
+    overflow-y: auto; /* 이미지 길면 스크롤 생성 */
+    text-align: center;
+    flex: 1;
+}
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+}
+
+/* 클릭이 불가능한 카드 스타일 제어 */
+.patent-card.no-click {
+    cursor: default; /* 손가락 모양 포인터 해제 */
+    transform: none !important; /* 마우스 오버 시 들썩이는 모션 무효화 */
+    box-shadow: none !important; /* 그림자 강조 효과 무효화 */
+}
+
+/* 심사 중 안내 문구 스타일 */
+.view-btn-disabled {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #aaa; /* 흐릿한 회색 처리 */
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .patent-container {
+        flex-direction: column;
+    }
+    .patent-title { font-size: 20px; }
+    .patent-card { padding: 25px 20px; }
+    .patent-name { font-size: 16px; }
+    .modal-content { padding: 30px 15px 15px 15px; }
+    .modal-title { font-size: 17px; }
+}
+
 /* --- 5. 반응형 --- */
 @media (max-width: 1024px) {
     .intro_grid { grid-template-columns: 1fr; }

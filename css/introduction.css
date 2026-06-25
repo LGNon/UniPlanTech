@@ -105,6 +105,140 @@
     margin-top: 5px;
 }
 
+/* ==========================================
+   유니플랜텍 대표이사 프로필 전용 CSS 
+   ========================================== */
+
+.ceo-profile-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.ceo-profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #333333; /* 본문 텍스트 */
+    line-height: 1.7;
+    box-sizing: border-box;
+}
+
+/* 섹션 타이틀 - 유니플랜텍의 상징적인 --main-green 변수 활용 */
+.ceo-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--main-green); 
+    margin-top: 0;
+    margin-bottom: 35px;
+    border-bottom: 2px solid var(--main-green);
+    padding-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.profile-block {
+    margin-bottom: 40px;
+}
+
+.profile-block:last-child {
+    margin-bottom: 0;
+}
+
+/* 서브타이틀 - 디자인 일체감을 높이는 --main-green 조합 */
+.section-subtitle {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--main-green); 
+    margin-top: 0;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+}
+
+/* 서브타이틀 왼쪽 포인트 바 - 생동감을 주는 --point-green 변수 활용 */
+.section-subtitle::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background-color: var(--point-green);
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+/* 리스트 및 상세 연혁 정돈 */
+.profile-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.profile-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 14px;
+    font-size: 16px;
+    color: #555555;
+}
+
+.profile-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* 불릿 포인트 디자인 - 마우스를 올리거나 포인트를 줄 때 --point-green 연동 */
+.profile-list li::before {
+    content: '•';
+    position: absolute;
+    left: 5px;
+    top: -1px;
+    color: var(--point-green);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* 주요 키워드 강조 */
+.profile-list .highlight {
+    font-weight: 600;
+    color: #111111;
+}
+
+/* 대외 활동 카드 박스 */
+.project-card {
+    background-color: #fcfdfe; /* 자연스러운 오프화이트/연회색 */
+    border: 1px solid #eef2f4;
+    border-top: 2px solid var(--main-green); /* 상단에 메인 그린 포인트 탑재 */
+    border-radius: 0 0 8px 8px;
+    padding: 24px;
+    margin-top: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.project-card .profile-list li {
+    margin-bottom: 12px;
+}
+
+.project-card .profile-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* 모바일 반응형 최적화 */
+@media (max-width: 768px) {
+    .ceo-title {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+    .section-subtitle {
+        font-size: 17px;
+    }
+    .profile-list li {
+        font-size: 14.5px;
+        margin-bottom: 10px;
+    }
+    .project-card {
+        padding: 18px;
+    }
+}
+
 /* 반응형 */
 @media (max-width: 1024px) {
     .mission_box { flex-direction: column; }

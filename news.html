@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/menu.js"></script>
 </head>
+
 <body>
 
     <header class="header">
@@ -41,27 +43,22 @@
                 <li>
                     <a href="technology.html">사업 정보</a>
                     <ul class="depth2">
-                        <li><a href="culture.html">조직배양</a></li>
-                        <li><a href="upbringing.html">품종육성</a></li>
-                        <li><a href="smartFarm.html">스마트팜</a></li>
+                        <li><a href="culture.html">팔레놉시스(호접란)</a></li>
+                        <li><a href="smartFarm.html">스마트팜용 크린 플랜츠(고추냉이)</a></li>
                         <li><a href="aponicGarden.html">아포닉가든</a></li>
-                        <li><a href="breed.html">대표 품종</a></li>
-                        <li><a href="patent.html">특허</a></li>
-                        <li><a href="apply.html">출원</a></li>
-                        <li><a href="brand.html">상표</a></li>
+                        <li><a href="oem.html">주문자 위탁 생산(OEM)</a></li>
+                        <li>
+                            <a href="upbringing.html">연구개발</a>
+                            <ul class="depth3">
+                                <li><a href="patent.html">특허</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">최근 소식</a>
                     <ul class="depth2">
                         <li><a href="news.html">언론보도</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">주요 활동</a>
-                    <ul class="depth2">
-                        <li><a href="global.html">글로벌 네트워크</a></li>
-                        <li><a href="social.html">사회공헌</a></li>
                     </ul>
                 </li>
                 <li>
@@ -144,10 +141,11 @@
     </footer>
 
     <script>
-        $(document).ready(function() {
-            $('.btn_all_menu').click(function() { $('.nav_full').addClass('active'); });
-            $('.btn_close').click(function() { $('.nav_full').removeClass('active'); });
+        $(document).ready(function () {
+            $('.btn_all_menu').click(function () { $('.nav_full').addClass('active'); });
+            $('.btn_close').click(function () { $('.nav_full').removeClass('active'); });
         });
     </script>
 </body>
+
 </html>
