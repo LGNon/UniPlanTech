@@ -229,6 +229,10 @@
     padding: 50px 0;
 }
 
+/* 애니메이션 초기상태 (script.js의 aniMoving 연동) */
+.ani { opacity: 0; transform: translateY(50px); transition: 1s; }
+.ani.moving { opacity: 1; transform: translateY(0); }
+
 /* 반응형 모바일 대응 */
 @media screen and (max-width: 1024px) {
     .smart_tech .tech_list {

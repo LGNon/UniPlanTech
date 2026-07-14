@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+/* 보유 품종 페이지 전용 CSS 스타일 */
+:root {
+    --main-green: #1a472a;
+    --point-green: #8bc34a;
+    --text-black: #333;
+    --bg-light: #f9f9f9;
+}
+
+.varieties_section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 80px auto 0 auto; /* 헤더 높이만큼 상단 여백 보정 */
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.page_title_area {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page_title_area h2 {
+    font-size: 36px;
+    color: var(--main-green);
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.page_title_area p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 품종 리스트 그리드 레이아웃 */
+.varieties_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.variety_card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.variety_card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.card_img_wrap {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #e0e0e0;
+    position: relative;
+}
+
+.card_img_wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.variety_card:hover .card_img_wrap img {
+    transform: scale(1.05);
+}
+
+/* 품종 상태 표시 태그 */
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--point-green);
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.card_content {
+    padding: 25px;
+}
+
+.variety_category {
+    font-size: 13px;
+    color: var(--point-green);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.variety_name {
+    font-size: 20px;
+    color: var(--text-black);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.variety_desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    height: 67px; /* 3줄 제한 고정 높이 */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.variety_features {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.feature_tag {
+    background: #f1f5f2;
+    color: #555;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* 애니메이션 초기상태 (script.js의 aniMoving 연동) */
+.ani { opacity: 0; transform: translateY(50px); transition: 1s; }
+.ani.moving { opacity: 1; transform: translateY(0); }
+
+/* 반응형 모바일 대역 대응 */
+@media (max-width: 992px) {
+    .varieties_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .varieties_section {
+        padding: 50px 15px;
+    }
+    .page_title_area h2 {
+        font-size: 28px;
+    }
+    .varieties_grid {
+        grid-template-columns: 1fr;
+    }
+    .card_img_wrap {
+        height: 200px;
+    }
+}

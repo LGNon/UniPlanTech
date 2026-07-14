@@ -13,14 +13,16 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/oem.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/script.js"></script>
 </head>
 
 <body>
 
     <header class="header">
         <div class="header_inner">
-            <h1 class="logo"><a href="index.html" class="logo_txt">UNIPLANTECH</a></h1>
+            <h1 class="logo"><a href="index.html" class="logo_txt"><img class="log_img" src="img/logo.png" alt="유니플랜텍">UNIPLANTECH</a></h1>
             <div class="header_right">
                 <div class="btn_all_menu">
                     <span></span><span></span><span></span>
@@ -32,41 +34,46 @@
     <div class="nav_full">
         <div class="nav_inner">
             <div class="nav_top">
-                <span class="nav_logo">UNIPLANTECH</span>
+                <a href="index.html" class="nav_logo">UNIPLANTECH</a>
                 <a href="javascript:void(0);" class="btn_close">×</a>
             </div>
             <ul class="nav_list">
                 <li>
-                    <a href="about.html">회사 정보</a>
+                    <p class="menu_h1">유니플랜텍</p>
                     <ul class="depth2">
                         <li><a href="introduction.html">기업 소개</a></li>
-                        <li><a href="lab.html">기술연구소</a></li>
                         <li><a href="road.html">찾아오시는 길</a></li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="technology.html">사업 정보</a>
+                    <a href="technology.html" class="menu_h1">사업정보</a>
                     <ul class="depth2">
-                        <li><a href="culture.html">팔레놉시스(호접란)</a></li>
-                        <li><a href="smartFarm.html">스마트팜용 크린 플랜츠(고추냉이)</a></li>
+                        <li><a href="culture.html">팔레놉시스</a></li>
+                        <li><a href="smartFarm.html">크린플렌츠</a></li>
                         <li><a href="aponicGarden.html">아포닉가든</a></li>
-                        <li><a href="oem.html">주문자 위탁 생산(OEM)</a></li>
-                        <li>
-                            <a href="upbringing.html">연구개발</a>
-                            <ul class="depth3">
-                                <li><a href="patent.html">특허</a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="#">최근 소식</a>
+                    <a href="lab.html" class="menu_h1">기술연구소</a>
                     <ul class="depth2">
-                        <li><a href="news.html">언론보도</a></li>
+                        <li><a href="upbringing.html">연구개발</a></li>
+                        <li><a href="patent.html">보유 특허</a></li>
+                        <li><a href="varieties.html">보유 품종</a></li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="#" target="_blank" class="point_link">아포닉가든 스토어</a>
+                    <a href="oem.html" class="menu_h1">주문자위탁생산(OEM)</a>
+                </li>
+
+                <li>
+                    <a href="news.html" class="menu_h1">최근소식</a>
+                </li>
+
+                <li>
+                    <p class="menu_h1">아포닉가든 스토어</p>
                     <ul class="depth2">
                         <li><a href="https://www.simpol.co.kr/front/minishop.php?sellvidx=302422679&NaPm=ct%3Dmmelw6wi%7Cci%3DERc1f69dc2%2D1932%2D11f1%2D813f%2Dfe791740dbec%7Ctr%3Dsa%7Chk%3De5e4b0255a328fcf01077cc38422570f92838d25%7Cnacn%3DcMZOBwgsZPa2"
                                 target="_blank">심폴 ↗</a></li>
@@ -79,7 +86,8 @@
         </div>
     </div>
 
-    <section class="visual oem_visual" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('img/oem_visual.jpg') no-repeat center center / cover;">
+    <section class="visual oem_visual"
+        style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('img/oem_visual.jpg') no-repeat center center / cover;">
         <div class="visu_txt_wrap">
             <div class="visu_txt">
                 <strong class="ani">Original Equipment Manufacturing</strong>
@@ -96,14 +104,18 @@
                         <span class="sub_tit">Advanced Mass Production Service</span>
                         <h2>유니플랜텍<br>주문자 위탁 생산(OEM)</h2>
                         <p style="margin-bottom: 25px;">
-                            유니플랜텍은 다년간 축적된 첨단 바이오 기술력과 독자적인 대량 번식 인프라를 바탕으로 고부가가치 작물의 맞춤형 위탁 생산(OEM) 서비스를 제공합니다. 엄격한 품질 관리 시스템을 통해 농가 및 기업 고객이 원하는 규격의 건강한 우량 종묘를 안정적으로 대량 공급합니다.
+                            유니플랜텍은 다년간 축적된 첨단 바이오 기술력과 독자적인 대량 번식 인프라를 바탕으로 고부가가치 작물의 맞춤형 위탁 생산(OEM) 서비스를 제공합니다. 엄격한 품질
+                            관리 시스템을 통해 농가 및 기업 고객이 원하는 규격의 건강한 우량 종묘를 안정적으로 대량 공급합니다.
                         </p>
-                        
-                        <div style="background-color: #f8f9fa; border-left: 4px solid var(--main-green); padding: 18px 20px; border-radius: 0 8px 8px 0;">
-                            <h3 style="font-size: 16px; color: var(--main-green); margin-bottom: 10px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+
+                        <div
+                            style="background-color: #f8f9fa; border-left: 4px solid var(--main-green); padding: 18px 20px; border-radius: 0 8px 8px 0;">
+                            <h3
+                                style="font-size: 16px; color: var(--main-green); margin-bottom: 10px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
                                 📜 OEM 관련 핵심 보유 특허 기술
                             </h3>
-                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #555; line-height: 1.6;">
+                            <ul
+                                style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #555; line-height: 1.6;">
                                 <li style="margin-bottom: 6px;">• <strong>사과목 생산방법</strong> (제10-1641301호)</li>
                                 <li>• <strong>조직배양 식물체의 대량 순화시설물</strong> (제10-1960860호)</li>
                             </ul>
@@ -125,8 +137,11 @@
                 <div class="tech_list">
                     <div class="tech_card ani">
                         <div class="icon">🫐</div>
-                        <h3>블루베리 <span style="font-size: 13px; color: #888; font-weight: 400; display: block; margin-top: 2px;">(Vaccinium sect. cyanococcus)</span></h3>
-                        <p style="margin-top: 12px; border-top: 1px dashed #eee; padding-top: 12px; text-align: left; font-size: 14px; line-height: 1.8;">
+                        <h3>블루베리 <span
+                                style="font-size: 13px; color: #888; font-weight: 400; display: block; margin-top: 2px;">(Vaccinium
+                                sect. cyanococcus)</span></h3>
+                        <p
+                            style="margin-top: 12px; border-top: 1px dashed #eee; padding-top: 12px; text-align: left; font-size: 14px; line-height: 1.8;">
                             • <strong>주문 단위 :</strong> 20,000주 이상<br>
                             • <strong>생산 기간 :</strong> 주문일로부터 14 ~ 16개월<br>
                             • <strong>생산 규격 :</strong> 128구 플러그 트레이
@@ -135,7 +150,8 @@
                     <div class="tech_card ani">
                         <div class="icon">🌱</div>
                         <h3>숙근성 식물</h3>
-                        <p style="margin-top: 12px; border-top: 1px dashed #eee; padding-top: 12px; text-align: left; font-size: 14px; line-height: 1.8;">
+                        <p
+                            style="margin-top: 12px; border-top: 1px dashed #eee; padding-top: 12px; text-align: left; font-size: 14px; line-height: 1.8;">
                             • <strong>주문 단위 :</strong> 10,000주 이상<br>
                             • <strong>생산 기간 :</strong> 주문일로부터 12 ~ 16개월<br>
                             • <strong>생산 규격 :</strong> 128구 플러그 트레이
@@ -144,7 +160,8 @@
                     <div class="tech_card ani">
                         <div class="icon">🧪</div>
                         <h3>약용식물</h3>
-                        <p style="margin-top: 12px; border-top: 1px dashed #eee; padding-top: 12px; text-align: left; font-size: 14px; line-height: 1.8;">
+                        <p
+                            style="margin-top: 12px; border-top: 1px dashed #eee; padding-top: 12px; text-align: left; font-size: 14px; line-height: 1.8;">
                             • <strong>주문 단위 :</strong> 20,000주 이상<br>
                             • <strong>생산 기간 :</strong> 초대배양일로부터 14 ~ 18개월<br>
                             • <strong>생산 규격 :</strong> 협의 후 맞춤 공급
@@ -160,10 +177,14 @@
                     <div class="feature_txt">
                         <h3>유니플랜텍 위탁 생산(OEM)의 차별성</h3>
                         <ul class="feature_list">
-                            <li><strong>특허 기반 대량 순화 공정</strong> - 특허 기술인 '대량 순화 시설물'을 통해 묘목의 외부 환경 적응력을 극대화하여 활착률을 높입니다.</li>
-                            <li><strong>철저한 무균·무병 환경</strong> - 첨단 연구소 인프라에서 초기 조직배양 공정이 진행되므로 바이러스 유입 리스크가 전혀 없습니다.</li>
-                            <li><strong>정밀한 생산 스케줄링 관리</strong> - 작물별 최소 12개월에서 최대 18개월의 정밀 배양 주기를 엄수하여 고품질 균일 묘목을 납품합니다.</li>
-                            <li><strong>대량 주문 전용 최적화 규격</strong> - 농가 및 대형 스마트팜에서 이식 효율이 가장 우수한 128구 플러그 트레이 형태로 안전하게 포장 및 출하됩니다.</li>
+                            <li><strong>특허 기반 대량 순화 공정</strong> - 특허 기술인 '대량 순화 시설물'을 통해 묘목의 외부 환경 적응력을 극대화하여 활착률을 높입니다.
+                            </li>
+                            <li><strong>철저한 무균·무병 환경</strong> - 첨단 연구소 인프라에서 초기 조직배양 공정이 진행되므로 바이러스 유입 리스크가 전혀 없습니다.
+                            </li>
+                            <li><strong>정밀한 생산 스케줄링 관리</strong> - 작물별 최소 12개월에서 최대 18개월의 정밀 배양 주기를 엄수하여 고품질 균일 묘목을
+                                납품합니다.</li>
+                            <li><strong>대량 주문 전용 최적화 규격</strong> - 농가 및 대형 스마트팜에서 이식 효율이 가장 우수한 128구 플러그 트레이 형태로 안전하게 포장
+                                및 출하됩니다.</li>
                         </ul>
                     </div>
                 </div>
@@ -173,12 +194,13 @@
 
     <footer class="footer">
         <div class="inner">
-            <h2>UNIPLANTECH</h2>
+            <h2><img src="img/logo_footer.png" alt="유니플랜텍"></h2>
             <div class="footer_info_wrap">
                 <ul class="info_left">
                     <li>농업회사법인 (주)유니플랜텍 | 대표이사 : 윤여중</li>
                     <li>본사 : 전북특별자치도 김제시 백산면 씨앗길 103</li>
-                    <li>TEL : 063-000-0000</li>
+                    <li>TEL : 0502-502-8817</li>
+                    <li>email : unie@hanmail.net</li>
                 </ul>
             </div>
             <p class="copy">Copyright &copy; 2026 Uniplantec. All Rights Reserved.</p>

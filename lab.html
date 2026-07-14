@@ -17,15 +17,17 @@
     <link rel="stylesheet" href="css/lab.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/menu.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/lad.js"></script>
 </head>
 
 <body class="lab_page">
 
     <header class="header">
         <div class="header_inner">
-            <h1 class="logo"><a href="index.html" class="logo_txt">UNIPLANTECH</a></h1>
+            <h1 class="logo"><a href="index.html" class="logo_txt"><img class="log_img" src="img/logo.png"
+                        alt="유니플랜텍">UNIPLANTECH</a></h1>
             <div class="header_right">
                 <div class="btn_all_menu">
                     <span></span><span></span><span></span>
@@ -37,41 +39,46 @@
     <div class="nav_full">
         <div class="nav_inner">
             <div class="nav_top">
-                <span class="nav_logo">UNIPLANTECH</span>
+                <a href="index.html" class="nav_logo">UNIPLANTECH</a>
                 <a href="javascript:void(0);" class="btn_close">×</a>
             </div>
             <ul class="nav_list">
                 <li>
-                    <a href="about.html">회사 정보</a>
+                    <p class="menu_h1">유니플랜텍</p>
                     <ul class="depth2">
                         <li><a href="introduction.html">기업 소개</a></li>
-                        <li><a href="lab.html">기술연구소</a></li>
                         <li><a href="road.html">찾아오시는 길</a></li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="technology.html">사업 정보</a>
+                    <a href="technology.html" class="menu_h1">사업정보</a>
                     <ul class="depth2">
-                        <li><a href="culture.html">팔레놉시스(호접란)</a></li>
-                        <li><a href="smartFarm.html">스마트팜용 크린 플랜츠(고추냉이)</a></li>
+                        <li><a href="culture.html">팔레놉시스</a></li>
+                        <li><a href="smartFarm.html">크린플렌츠</a></li>
                         <li><a href="aponicGarden.html">아포닉가든</a></li>
-                        <li><a href="oem.html">주문자 위탁 생산(OEM)</a></li>
-                        <li>
-                            <a href="upbringing.html">연구개발</a>
-                            <ul class="depth3">
-                                <li><a href="patent.html">특허</a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="#">최근 소식</a>
+                    <a href="lab.html" class="menu_h1">기술연구소</a>
                     <ul class="depth2">
-                        <li><a href="news.html">언론보도</a></li>
+                        <li><a href="upbringing.html">연구개발</a></li>
+                        <li><a href="patent.html">보유 특허</a></li>
+                        <li><a href="varieties.html">보유 품종</a></li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="#" target="_blank" class="point_link">아포닉가든 스토어</a>
+                    <a href="oem.html" class="menu_h1">주문자위탁생산(OEM)</a>
+                </li>
+
+                <li>
+                    <a href="news.html" class="menu_h1">최근소식</a>
+                </li>
+
+                <li>
+                    <p class="menu_h1">아포닉가든 스토어</p>
                     <ul class="depth2">
                         <li><a href="https://www.simpol.co.kr/front/minishop.php?sellvidx=302422679&NaPm=ct%3Dmmelw6wi%7Cci%3DERc1f69dc2%2D1932%2D11f1%2D813f%2Dfe791740dbec%7Ctr%3Dsa%7Chk%3De5e4b0255a328fcf01077cc38422570f92838d25%7Cnacn%3DcMZOBwgsZPa2"
                                 target="_blank">심폴 ↗</a></li>
@@ -99,41 +106,94 @@
                 <div class="sec_tit">
                     <div class="left">
                         <h2>기술연구소 소개</h2>
-                        <p>유니플랜텍 기술연구소는 고품질 종묘 생산을 위한 핵심 기지입니다.</p>
+                        <p>유니플랜텍 기술연구소는 끊임없는 연구개발을 통해 혁신적인 농업 솔루션을 구축해 나갑니다.</p>
                     </div>
                 </div>
 
                 <div class="lab_list">
                     <div class="lab_item ani">
-                        <div class="lab_img">
-                            <img src="img/business1.png" alt="무균 배양실">
-                        </div>
                         <div class="lab_txt">
                             <span class="num">01</span>
-                            <h3>무균 배양 연구실</h3>
-                            <p>식물의 조직배양이 이루어지는 핵심 공간으로, 철저한 오염 방지 시스템과 최적의 온도/습도 제어를 통해 우수한 종묘의 기초를 만듭니다.</p>
+                            <h3>팔레놉시스 신품종 개발</h3>
+                            <p>시장을 선도할 고부가가치 화훼류인 팔레놉시스(호접란)의 우수 형질을 발굴하고, 글로벌 경쟁력을 갖춘 차별화된 독자 신품종을 연구 및 개발합니다.</p>
+                            <button class="btn_pdf" onclick="openPdfModal('img/koica.pdf')">
+                                자세히 보기
+                            </button>
+
+                            <div id="pdfModal" class="pdf-modal">
+                                <div class="pdf-modal-content">
+                                    <span class="pdf-close" onclick="closePdfModal()">&times;</span>
+                                    <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="lab_item ani reverse">
-                        <div class="lab_img">
-                            <img src="img/business3.BMP" alt="육묘 환경 제어실">
+                        <div class="lab_img grid_img_3">
+                            <div class="img_thumb"><img src="img/lab2_1.JPG" alt="종묘 대량생산 연구 1"></div>
+                            <div class="img_thumb"><img src="img/lab2_2.BMP" alt="종묘 대량생산 연구 2"></div>
+                            <div class="img_thumb"><img src="img/lab2_3.BMP" alt="종묘 대량생산 연구 3"></div>
+                            <div class="img_thumb"><img src="img/business1.png" alt="종묘 대량생산 연구 4"></div>
                         </div>
                         <div class="lab_txt">
                             <span class="num">02</span>
-                            <h3>환경제어 스마트 육묘실</h3>
-                            <p>조직배양된 식물체가 외부 환경에 적응할 수 있도록 돕는 순화 시설입니다. 독자적인 특허 기술을 적용하여 생존율을 획기적으로 높였습니다.</p>
+                            <h3>고품질 종묘 및 대량생산 시스템 개발</h3>
+                            <p>바이러스가 없는 우량 무병묘를 안정적으로 확보하고, 균일한 품질의 식물체를 대량으로 대량 증식할 수 있는 최적의 배지 조성 및 표준화된 자동화 생산 공정을
+                                연구합니다.</p>
                         </div>
                     </div>
 
                     <div class="lab_item ani">
-                        <div class="lab_img">
-                            <img src="img/lab3.JPG" alt="성분 분석실">
+                        <div class="lab_img single_img">
+                            <img src="img/lab3_1.BMP" alt="대량 순화 시스템 개발 1">
+                            <img src="img/lab3_2.BMP" alt="대량 순화 시스템 개발 2">
                         </div>
                         <div class="lab_txt">
                             <span class="num">03</span>
-                            <h3>식물 성분 및 질병 분석실</h3>
-                            <p>품종의 균일성을 검증하고 병충해 유무를 정밀 분석합니다. 과학적인 데이터를 바탕으로 최상의 컨디션을 유지하는 품질 관리를 수행합니다.</p>
+                            <h3>대량 순화 시스템 개발</h3>
+                            <p>조직배양실에서 자란 연약한 식물체가 외부 토양과 자연 환경에 완벽하게 적응(순화)할 수 있도록 유니플랜텍만의 특허 기술을 기반으로 한 고효율 대량 순화 정밀
+                                제어 시스템을 구축합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="lab_item ani reverse lab_slider_section">
+                        <div class="lab_txt">
+                            <span class="num">04</span>
+                            <h3>육종소재 개발</h3>
+                            <p class="sub_lead">· 소포자배양<br>· 속간교잡, 미숙배배양</p>
+                            <p>우수한 유전 자원을 조기에 고정하는 소포자배양 기술과 자연 상태에서 결실이 어려운 품종 간의 속간교잡 및 미숙배배양 등 첨단 생공학 기법을 융합하여 혁신적인
+                                육종 원천 소재를 확보합니다.</p>
+                            <div class="slider_guide_txt">※ 마우스 드래그 또는 스크롤하여 전체 사진을 볼 수 있습니다. →</div>
+                        </div>
+                        <div class="lab_img slider_container">
+                            <div class="slider_wrapper">
+                                <div class="slide_card"><img src="img/lab4_1.BMP" alt="육종소재 연구 사진 1"><span
+                                        class="badge">소포자배양</span></div>
+                                <div class="slide_card"><img src="img/lab4_2.BMP" alt="육종소재 연구 사진 2"><span
+                                        class="badge">소포자배양</span></div>
+                                <div class="slide_card"><img src="img/lab4_3.BMP" alt="육종소재 연구 사진 3"><span
+                                        class="badge">소포자배양</span></div>
+                                <div class="slide_card"><img src="img/lab4_4.BMP" alt="육종소재 연구 사진 4"><span
+                                        class="badge">소포자배양</span></div>
+                                <div class="slide_card"><img src="img/lab4_5.BMP" alt="육종소재 연구 사진 5"><span
+                                        class="badge">속간교잡</span></div>
+                                <div class="slide_card"><img src="img/lab4_6.BMP" alt="육종소재 연구 사진 6"><span
+                                        class="badge">미숙배배양</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lab_item ani">
+                        <div class="lab_txt">
+                            <div class="single_img lab5_container">
+                                <img src="img/lab5.BMP" alt="미래농업 식물공장 시스템">
+                            </div>
+                            <span class="num">05</span>
+                            <h3>미래농업을 위한 식물공장 시스템개발</h3>
+                            <p class="sub_lead">· 수직농장 적합 작물 개발</p>
+                            <p>기후 변화와 공간적 제약을 극복하기 위해 다단식 도심형 수직농장(Vertical Farm)에 최적화된 고부가가치 기능성 작물을 선발하고, 광원(LED) 및 양액
+                                제어를 결합한 식물공장 표준 재배 메커니즘을 개발합니다.</p>
                         </div>
                     </div>
                 </div>
@@ -143,12 +203,13 @@
 
     <footer class="footer">
         <div class="inner">
-            <h2>UNIPLANTECH</h2>
+            <h2><img src="img/logo_footer.png" alt="유니플랜텍"></h2>
             <div class="footer_info_wrap">
                 <ul class="info_left">
                     <li>농업회사법인 (주)유니플랜텍 | 대표이사 : 윤여중</li>
                     <li>본사 : 전북특별자치도 김제시 백산면 씨앗길 103</li>
-                    <li>TEL : 063-000-0000</li>
+                    <li>TEL : 0502-502-8817</li>
+                    <li>email : unie@hanmail.net</li>
                 </ul>
             </div>
             <p class="copy">Copyright &copy; 2026 Uniplantec. All Rights Reserved.</p>

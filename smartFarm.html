@@ -13,14 +13,17 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/smartFarm.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/script.js"></script>
 </head>
 
 <body>
 
     <header class="header">
         <div class="header_inner">
-            <h1 class="logo"><a href="index.html" class="logo_txt">UNIPLANTECH</a></h1>
+            <h1 class="logo"><a href="index.html" class="logo_txt"><img class="log_img" src="img/logo.png"
+                        alt="유니플랜텍">UNIPLANTECH</a></h1>
             <div class="header_right">
                 <div class="btn_all_menu">
                     <span></span><span></span><span></span>
@@ -32,41 +35,46 @@
     <div class="nav_full">
         <div class="nav_inner">
             <div class="nav_top">
-                <span class="nav_logo">UNIPLANTECH</span>
+                <a href="index.html" class="nav_logo">UNIPLANTECH</a>
                 <a href="javascript:void(0);" class="btn_close">×</a>
             </div>
             <ul class="nav_list">
                 <li>
-                    <a href="about.html">회사 정보</a>
+                    <p class="menu_h1">유니플랜텍</p>
                     <ul class="depth2">
                         <li><a href="introduction.html">기업 소개</a></li>
-                        <li><a href="lab.html">기술연구소</a></li>
                         <li><a href="road.html">찾아오시는 길</a></li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="technology.html">사업 정보</a>
+                    <a href="technology.html" class="menu_h1">사업정보</a>
                     <ul class="depth2">
-                        <li><a href="culture.html">팔레놉시스(호접란)</a></li>
-                        <li><a href="smartFarm.html">스마트팜용 크린 플랜츠(고추냉이)</a></li>
+                        <li><a href="culture.html">팔레놉시스</a></li>
+                        <li><a href="smartFarm.html">크린플렌츠</a></li>
                         <li><a href="aponicGarden.html">아포닉가든</a></li>
-                        <li><a href="oem.html">주문자 위탁 생산(OEM)</a></li>
-                        <li>
-                            <a href="upbringing.html">연구개발</a>
-                            <ul class="depth3">
-                                <li><a href="patent.html">특허</a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="#">최근 소식</a>
+                    <a href="lab.html" class="menu_h1">기술연구소</a>
                     <ul class="depth2">
-                        <li><a href="news.html">언론보도</a></li>
+                        <li><a href="upbringing.html">연구개발</a></li>
+                        <li><a href="patent.html">보유 특허</a></li>
+                        <li><a href="varieties.html">보유 품종</a></li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="#" target="_blank" class="point_link">아포닉가든 스토어</a>
+                    <a href="oem.html" class="menu_h1">주문자위탁생산(OEM)</a>
+                </li>
+
+                <li>
+                    <a href="news.html" class="menu_h1">최근소식</a>
+                </li>
+
+                <li>
+                    <p class="menu_h1">아포닉가든 스토어</p>
                     <ul class="depth2">
                         <li><a href="https://www.simpol.co.kr/front/minishop.php?sellvidx=302422679&NaPm=ct%3Dmmelw6wi%7Cci%3DERc1f69dc2%2D1932%2D11f1%2D813f%2Dfe791740dbec%7Ctr%3Dsa%7Chk%3De5e4b0255a328fcf01077cc38422570f92838d25%7Cnacn%3DcMZOBwgsZPa2"
                                 target="_blank">심폴 ↗</a></li>
@@ -96,11 +104,14 @@
                         <span class="sub_tit">Eutrema wasabi Overview</span>
                         <h2>크린 플랜츠<br>고추냉이 개요</h2>
                         <p style="margin-bottom: 20px;">
-                            십자화과 고추냉이 속에 속하는 여러해살이풀로, 특유의 코를 톡 쏘는 강렬한 매운맛과 상쾌한 향이 특징입니다. 생선회, 초밥, 고기 요리 등에 절대 빠질 수 없는 대한민국 대표 향신료 작물입니다.
+                            십자화과 고추냉이 속에 속하는 여러해살이풀로, 특유의 코를 톡 쏘는 강렬한 매운맛과 상쾌한 향이 특징입니다. 생선회, 초밥, 고기 요리 등에 절대 빠질 수 없는
+                            대한민국 대표 향신료 작물입니다.
                         </p>
-                        <h3 style="font-size: 18px; color: var(--main-green); margin-bottom: 8px; font-weight: 700;">💡 독보적인 향과 매운맛의 비밀</h3>
+                        <h3 style="font-size: 18px; color: var(--main-green); margin-bottom: 8px; font-weight: 700;">💡
+                            독보적인 향과 매운맛의 비밀</h3>
                         <p>
-                            고추냉이 세포 속의 <strong>'시니그린'</strong> 성분은 세포가 파괴될 때(강판에 갈 때) 효소와 반응하여 휘발성 매운맛 성분인 <strong>알릴 이소티오시아네이트(Allyl isothiocyanate)</strong>로 변하여 상쾌하고 강렬한 풍미를 선사합니다.
+                            고추냉이 세포 속의 <strong>'시니그린'</strong> 성분은 세포가 파괴될 때(강판에 갈 때) 효소와 반응하여 휘발성 매운맛 성분인 <strong>알릴
+                                이소티오시아네이트(Allyl isothiocyanate)</strong>로 변하여 상쾌하고 강렬한 풍미를 선사합니다.
                         </p>
                     </div>
                     <div class="img_box ani">
@@ -142,7 +153,8 @@
                     <div class="feature_txt">
                         <h3>왜 유니플랜텍 크린 플랜츠인가?</h3>
                         <ul class="feature_list">
-                            <li><strong>안정적인 공급 규격</strong> - 출하 및 이식이 용이한 <strong style="color: var(--point-green);">50구 플러그 트레이</strong> 규격으로 최적의 재배 편의성을 제공합니다.</li>
+                            <li><strong>안정적인 공급 규격</strong> - 출하 및 이식이 용이한 <strong
+                                    style="color: var(--point-green);">50구 플러그 트레이</strong> 규격으로 최적의 재배 편의성을 제공합니다.</li>
                             <li><strong>바이러스 프리 무병묘</strong> - 조직배양을 통해 식물이 본래 가진 병원균을 제거하여 농가 폐사율을 획기적으로 낮춥니다.</li>
                             <li><strong>정밀 환경 제어 솔루션</strong> - 온도와 습도에 민감한 고추냉이를 위해 ICT 기반의 맞춤형 생육 레시피를 실시간 가동합니다.</li>
                             <li><strong>대량 순화 시설 연계</strong> - 자사 특허 기술인 대량 순화 시설물과의 연계를 통해 대규모 상업 생산 효율을 극대화합니다.</li>
@@ -155,17 +167,18 @@
 
     <footer class="footer">
         <div class="inner">
-            <h2>UNIPLANTECH</h2>
+            <h2><img src="img/logo_footer.png" alt="유니플랜텍"></h2>
             <div class="footer_info_wrap">
                 <ul class="info_left">
                     <li>농업회사법인 (주)유니플랜텍 | 대표이사 : 윤여중</li>
                     <li>본사 : 전북특별자치도 김제시 백산면 씨앗길 103</li>
-                    <li>TEL : 063-000-0000</li>
+                    <li>TEL : 0502-502-8817</li>
+                    <li>email : unie@hanmail.net</li>
                 </ul>
             </div>
             <p class="copy">Copyright &copy; 2026 Uniplantec. All Rights Reserved.</p>
         </div>
-    </</footer>
+    </footer>
 
 </body>
 

@@ -379,6 +379,10 @@
     background-color: #fcfcfc;
 }
 
+/* 애니메이션 초기상태 (script.js의 aniMoving 연동) */
+.ani { opacity: 0; transform: translateY(50px); transition: 1s; }
+.ani.moving { opacity: 1; transform: translateY(0); }
+
 /* 모바일/태블릿 반응형 (화면이 작아지면 사진을 위아래로 배치) */
 @media (max-width: 768px) {
     .modal-images {

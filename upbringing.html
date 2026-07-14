@@ -14,14 +14,16 @@
     <link rel="stylesheet" href="css/visual.css">
     <link rel="stylesheet" href="css/upbringing.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/script.js"></script>
 </head>
 
 <body>
 
     <header class="header">
         <div class="header_inner">
-            <h1 class="logo"><a href="index.html" class="logo_txt">UNIPLANTECH</a></h1>
+            <h1 class="logo"><a href="index.html" class="logo_txt"><img class="log_img" src="img/logo.png" alt="유니플랜텍">UNIPLANTECH</a></h1>
             <div class="header_right">
                 <div class="btn_all_menu">
                     <span></span><span></span><span></span>
@@ -33,41 +35,46 @@
     <div class="nav_full">
         <div class="nav_inner">
             <div class="nav_top">
-                <span class="nav_logo">UNIPLANTECH</span>
+                <a href="index.html" class="nav_logo">UNIPLANTECH</a>
                 <a href="javascript:void(0);" class="btn_close">×</a>
             </div>
             <ul class="nav_list">
                 <li>
-                    <a href="about.html">회사 정보</a>
+                    <p class="menu_h1">유니플랜텍</p>
                     <ul class="depth2">
                         <li><a href="introduction.html">기업 소개</a></li>
-                        <li><a href="lab.html">기술연구소</a></li>
                         <li><a href="road.html">찾아오시는 길</a></li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="technology.html">사업 정보</a>
+                    <a href="technology.html" class="menu_h1">사업정보</a>
                     <ul class="depth2">
-                        <li><a href="culture.html">팔레놉시스(호접란)</a></li>
-                        <li><a href="smartFarm.html">스마트팜용 크린 플랜츠(고추냉이)</a></li>
+                        <li><a href="culture.html">팔레놉시스</a></li>
+                        <li><a href="smartFarm.html">크린플렌츠</a></li>
                         <li><a href="aponicGarden.html">아포닉가든</a></li>
-                        <li><a href="oem.html">주문자 위탁 생산(OEM)</a></li>
-                        <li>
-                            <a href="upbringing.html">연구개발</a>
-                            <ul class="depth3">
-                                <li><a href="patent.html">특허</a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="#">최근 소식</a>
+                    <a href="lab.html" class="menu_h1">기술연구소</a>
                     <ul class="depth2">
-                        <li><a href="news.html">언론보도</a></li>
+                        <li><a href="upbringing.html">연구개발</a></li>
+                        <li><a href="patent.html">보유 특허</a></li>
+                        <li><a href="varieties.html">보유 품종</a></li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="#" target="_blank" class="point_link">아포닉가든 스토어</a>
+                    <a href="oem.html" class="menu_h1">주문자위탁생산(OEM)</a>
+                </li>
+
+                <li>
+                    <a href="news.html" class="menu_h1">최근소식</a>
+                </li>
+
+                <li>
+                    <p class="menu_h1">아포닉가든 스토어</p>
                     <ul class="depth2">
                         <li><a href="https://www.simpol.co.kr/front/minishop.php?sellvidx=302422679&NaPm=ct%3Dmmelw6wi%7Cci%3DERc1f69dc2%2D1932%2D11f1%2D813f%2Dfe791740dbec%7Ctr%3Dsa%7Chk%3De5e4b0255a328fcf01077cc38422570f92838d25%7Cnacn%3DcMZOBwgsZPa2"
                                 target="_blank">심폴 ↗</a></li>
@@ -94,10 +101,11 @@
         <section class="up_overview mainSec">
             <div class="inner">
                 <div class="sec_tit center">
-                    <h2>연구개발 개요 (머리말)</h2>
+                    <h2>연구개발 개요</h2>
                     <p class="ani">
                         농업회사법인 (주)유니플랜텍 기술연구소는 첨단 원예 바이오 기술과 스마트 가드닝 시스템의 융합을 지향합니다.<br>
-                        자체 원천 기술을 확보하는 <strong>[주관연구]</strong>, 산·학·연 협업을 통한 <strong>[공동연구]</strong>, 그리고 타겟 작물 및 상용화를 위한 <strong>[세부 프로젝트 연구]</strong>의 
+                        자체 원천 기술을 확보하는 <strong>[주관연구]</strong>, 산·학·연 협업을 통한 <strong>[공동연구]</strong>, 그리고 타겟 작물 및 상용화를
+                        위한 <strong>[세부 프로젝트 연구]</strong>의
                         유기적인 3대 축을 기반으로 미래 고부가가치 식물 자원 산업을 선도해 나가고 있습니다.
                     </p>
                 </div>
@@ -112,17 +120,26 @@
                 </div>
                 <div class="research_content_box">
                     <ul class="research_list_bullet" style="list-style: none; padding: 0;">
-                        <li class="ani" style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #1e3d2f;">
-                            <strong style="font-size: 18px; color: #1e3d2f; display: block; margin-bottom: 8px;">조직배양 원천 기술 확보 연구</strong>
-                            <p style="font-size: 15px; color: #666; line-height: 1.6;">식물 조직 및 세포 배양 기술을 이용해 외부 바이러스 감염 경로를 원천 차단한 깨끗하고 균일한 무병묘(Clean Plants) 생산 프로토콜 연구</p>
+                        <li class="ani"
+                            style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #1e3d2f;">
+                            <strong style="font-size: 18px; color: #1e3d2f; display: block; margin-bottom: 8px;">조직배양 원천
+                                기술 확보 연구</strong>
+                            <p style="font-size: 15px; color: #666; line-height: 1.6;">식물 조직 및 세포 배양 기술을 이용해 외부 바이러스 감염
+                                경로를 원천 차단한 깨끗하고 균일한 무병묘(Clean Plants) 생산 프로토콜 연구</p>
                         </li>
-                        <li class="ani" style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #1e3d2f;">
-                            <strong style="font-size: 18px; color: #1e3d2f; display: block; margin-bottom: 8px;">국내외 우량 식물 유전자원 수집 및 보존</strong>
-                            <p style="font-size: 15px; color: #666; line-height: 1.6;">지속가능한 육종의 토대를 마련하기 위해 전 세계 고부가가치 식물의 유전 정보를 분석하고, 가치 있는 야생종 및 재배종 모본을 선발·관리하는 시스템 구축 연구</p>
+                        <li class="ani"
+                            style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #1e3d2f;">
+                            <strong style="font-size: 18px; color: #1e3d2f; display: block; margin-bottom: 8px;">국내외 우량
+                                식물 유전자원 수집 및 보존</strong>
+                            <p style="font-size: 15px; color: #666; line-height: 1.6;">지속가능한 육종의 토대를 마련하기 위해 전 세계 고부가가치
+                                식물의 유전 정보를 분석하고, 가치 있는 야생종 및 재배종 모본을 선발·관리하는 시스템 구축 연구</p>
                         </li>
-                        <li class="ani" style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #1e3d2f;">
-                            <strong style="font-size: 18px; color: #1e3d2f; display: block; margin-bottom: 8px;">우량 대량 증식 공정 표준화 및 지식재산권 확보</strong>
-                            <p style="font-size: 15px; color: #666; line-height: 1.6;">생산 효율 극대화를 위한 대량 증식 공정 자동화 연구 및 국립종자원 품종보호권(특허, 출원, 상표)의 안정적 독점권 등록과 산업적 보급 가이드라인 수립</p>
+                        <li class="ani"
+                            style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #1e3d2f;">
+                            <strong style="font-size: 18px; color: #1e3d2f; display: block; margin-bottom: 8px;">우량 대량
+                                증식 공정 표준화 및 지식재산권 확보</strong>
+                            <p style="font-size: 15px; color: #666; line-height: 1.6;">생산 효율 극대화를 위한 대량 증식 공정 자동화 연구 및
+                                국립종자원 품종보호권(특허, 출원, 상표)의 안정적 독점권 등록과 산업적 보급 가이드라인 수립</p>
                         </li>
                     </ul>
                 </div>
@@ -137,17 +154,26 @@
                 </div>
                 <div class="research_content_box">
                     <ul class="research_list_bullet" style="list-style: none; padding: 0;">
-                        <li class="ani" style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #4a7c59;">
-                            <strong style="font-size: 18px; color: #4a7c59; display: block; margin-bottom: 8px;">첨단 생명공학(바이오 테크) 연계 육종 연구</strong>
-                            <p style="font-size: 15px; color: #666; line-height: 1.6;">대학 및 전문 연구원과의 협력을 통해 약 배양, 세포 융합, 유전자 마커 분석 등 정밀한 바이오 테크놀로지를 적용하여 돌연변이 및 유용 변이를 신속하게 유도하는 공동 기술 개발</p>
+                        <li class="ani"
+                            style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #4a7c59;">
+                            <strong style="font-size: 18px; color: #4a7c59; display: block; margin-bottom: 8px;">첨단
+                                생명공학(바이오 테크) 연계 육종 연구</strong>
+                            <p style="font-size: 15px; color: #666; line-height: 1.6;">대학 및 전문 연구원과의 협력을 통해 약 배양, 세포 융합,
+                                유전자 마커 분석 등 정밀한 바이오 테크놀로지를 적용하여 돌연변이 및 유용 변이를 신속하게 유도하는 공동 기술 개발</p>
                         </li>
-                        <li class="ani" style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #4a7c59;">
-                            <strong style="font-size: 18px; color: #4a7c59; display: block; margin-bottom: 8px;">스마트팜 ICT 융복합 재배 환경 최적화 연구</strong>
-                            <p style="font-size: 15px; color: #666; line-height: 1.6;">스마트팜 시스템 내 최적의 작물 생육을 위한 맞춤형 광원(LED) 파장 조합, 실시간 온·습도 제어 알고리즘 및 생육 단계별 필수 필수 양액 구성 성분 분석 및 공동 DB화</p>
+                        <li class="ani"
+                            style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #4a7c59;">
+                            <strong style="font-size: 18px; color: #4a7c59; display: block; margin-bottom: 8px;">스마트팜
+                                ICT 융복합 재배 환경 최적화 연구</strong>
+                            <p style="font-size: 15px; color: #666; line-height: 1.6;">스마트팜 시스템 내 최적의 작물 생육을 위한 맞춤형
+                                광원(LED) 파장 조합, 실시간 온·습도 제어 알고리즘 및 생육 단계별 필수 필수 양액 구성 성분 분석 및 공동 DB화</p>
                         </li>
-                        <li class="ani" style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #4a7c59;">
-                            <strong style="font-size: 18px; color: #4a7c59; display: block; margin-bottom: 8px;">기후 변화 적응성 및 현장 농가 실증 시험</strong>
-                            <p style="font-size: 15px; color: #666; line-height: 1.6;">유용하게 고정된 신규 계통 식물을 실제 농가 재배 환경에 직접 대입하여 혹서기·혹한기 저항성, 내병충성, 시장성 평가를 복합 수행하는 지역 연계 검정 프로젝트</p>
+                        <li class="ani"
+                            style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #4a7c59;">
+                            <strong style="font-size: 18px; color: #4a7c59; display: block; margin-bottom: 8px;">기후 변화
+                                적응성 및 현장 농가 실증 시험</strong>
+                            <p style="font-size: 15px; color: #666; line-height: 1.6;">유용하게 고정된 신규 계통 식물을 실제 농가 재배 환경에
+                                직접 대입하여 혹서기·혹한기 저항성, 내병충성, 시장성 평가를 복합 수행하는 지역 연계 검정 프로젝트</p>
                         </li>
                     </ul>
                 </div>
@@ -158,21 +184,30 @@
             <div class="inner">
                 <div class="sec_tit">
                     <h2>🧪 세부 프로젝트 연구</h2>
-                    <p>유니플랜텍의 핵심 3대 비즈니스 모델(호접란, 고추냉이, 아포닉가든)에 특화된 실무 상용화 연구 과제입니다.</p>
+                    <p>유니플랜텍의 핵심 비즈니스 모델(호접란, 고추냉이, 아포닉가든)에 특화된 실무 상용화 연구 과제입니다.</p>
                 </div>
                 <div class="research_content_box">
                     <ul class="research_list_bullet" style="list-style: none; padding: 0;">
-                        <li class="ani" style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #8fc0a9;">
-                            <strong style="font-size: 18px; color: #3a6351; display: block; margin-bottom: 8px;">프로젝트 A : 팔레놉시스(호접란) 글로벌 타겟 품종 육성</strong>
-                            <p style="font-size: 15px; color: #666; line-height: 1.6;">북미 및 글로벌 전 세계 바이어들이 선호하는 독창적인 화색(꽃 색상)과 화형(꽃 모양)을 가진 고부가가치 우수 호접란 계통 선별 및 상품화 상용화 연구</p>
+                        <li class="ani"
+                            style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #8fc0a9;">
+                            <strong style="font-size: 18px; color: #3a6351; display: block; margin-bottom: 8px;">프로젝트 A
+                                : 팔레놉시스(호접란) 글로벌 타겟 품종 육성</strong>
+                            <p style="font-size: 15px; color: #666; line-height: 1.6;">북미 및 글로벌 전 세계 바이어들이 선호하는 독창적인
+                                화색(꽃 색상)과 화형(꽃 모양)을 가진 고부가가치 우수 호접란 계통 선별 및 상품화 상용화 연구</p>
                         </li>
-                        <li class="ani" style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #8fc0a9;">
-                            <strong style="font-size: 18px; color: #3a6351; display: block; margin-bottom: 8px;">프로젝트 B : 스마트팜 전용 고추냉이(와사비) 수경재배 시스템 기술 확립</strong>
-                            <p style="font-size: 15px; color: #666; line-height: 1.6;">반음지성 기후와 서늘한 온도 균형이 필수적인 고추냉이의 생육 한계를 스마트팜 설비를 활용해 완전히 극복하고 고품질 균일 생산을 가능케 하는 완전 통제형 수경재배 프로젝트</p>
+                        <li class="ani"
+                            style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #8fc0a9;">
+                            <strong style="font-size: 18px; color: #3a6351; display: block; margin-bottom: 8px;">프로젝트 B
+                                : 스마트팜 전용 고추냉이(와사비) 수경재배 시스템 기술 확립</strong>
+                            <p style="font-size: 15px; color: #666; line-height: 1.6;">반음지성 기후와 서늘한 온도 균형이 필수적인 고추냉이의 생육
+                                한계를 스마트팜 설비를 활용해 완전히 극복하고 고품질 균일 생산을 가능케 하는 완전 통제형 수경재배 프로젝트</p>
                         </li>
-                        <li class="ani" style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #8fc0a9;">
-                            <strong style="font-size: 18px; color: #3a6351; display: block; margin-bottom: 8px;">프로젝트 C : 아포닉가든 도심 밀폐형 실내 수직정원용 정화 식물 선발</strong>
-                            <p style="font-size: 15px; color: #666; line-height: 1.6;">실내 인테리어 요소와 공기 정화 기능을 동시 수행하는 아포닉가든 기기에 최적화된 미세먼지 저감 효율 식물군 발굴 및 친환경 가정용 홈 가드닝 패키지 개발 프로젝트</p>
+                        <li class="ani"
+                            style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid #8fc0a9;">
+                            <strong style="font-size: 18px; color: #3a6351; display: block; margin-bottom: 8px;">프로젝트 C
+                                : 아포닉가든 도심 밀폐형 실내 수직정원용 정화 식물 선발</strong>
+                            <p style="font-size: 15px; color: #666; line-height: 1.6;">실내 인테리어 요소와 공기 정화 기능을 동시 수행하는
+                                아포닉가든 기기에 최적화된 미세먼지 저감 효율 식물군 발굴 및 친환경 가정용 홈 가드닝 패키지 개발 프로젝트</p>
                         </li>
                     </ul>
                 </div>
@@ -183,12 +218,13 @@
 
     <footer class="footer">
         <div class="inner">
-            <h2>UNIPLANTECH</h2>
+            <h2><img src="img/logo_footer.png" alt="유니플랜텍"></h2>
             <div class="footer_info_wrap">
                 <ul class="info_left">
                     <li>농업회사법인 (주)유니플랜텍 | 대표이사 : 윤여중</li>
                     <li>본사 : 전북특별자치도 김제시 백산면 씨앗길 103</li>
-                    <li>TEL : 063-000-0000</li>
+                    <li>TEL : 0502-502-8817</li>
+                    <li>email : unie@hanmail.net</li>
                 </ul>
             </div>
             <p class="copy">Copyright &copy; 2026 Uniplantec. All Rights Reserved.</p>

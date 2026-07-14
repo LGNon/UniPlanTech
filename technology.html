@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>사업정보 | UNIPLANTECH</title>
+    <title>사업 정보 | UNIPLANTECH</title>
 
     <link rel="shortcut icon" href="img/logo.png" sizes="16x16">
     <link rel="shortcut icon" href="img/logo.png" sizes="36x36">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
@@ -25,12 +23,9 @@
 
     <header class="header">
         <div class="header_inner">
-            <h1 class="logo"><a href="index.html" class="logo_txt">UNIPLANTECH</a></h1>
+            <h1 class="logo"><a href="index.html" class="logo_txt"><img class="log_img" src="img/logo.png"
+                        alt="유니플랜텍">UNIPLANTECH</a></h1>
             <div class="header_right">
-                <div class="langBox">
-                    <a href="#" class="on">KR</a>
-                    <a href="#">EN</a>
-                </div>
                 <div class="btn_all_menu">
                     <span></span><span></span><span></span>
                 </div>
@@ -41,41 +36,46 @@
     <div class="nav_full">
         <div class="nav_inner">
             <div class="nav_top">
-                <span class="nav_logo">UNIPLANTECH</span>
+                <a href="index.html" class="nav_logo">UNIPLANTECH</a>
                 <a href="javascript:void(0);" class="btn_close">×</a>
             </div>
             <ul class="nav_list">
                 <li>
-                    <a href="about.html">회사 정보</a>
+                    <p class="menu_h1">유니플랜텍</p>
                     <ul class="depth2">
                         <li><a href="introduction.html">기업 소개</a></li>
-                        <li><a href="lab.html">기술연구소</a></li>
                         <li><a href="road.html">찾아오시는 길</a></li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="technology.html">사업 정보</a>
+                    <a href="technology.html" class="menu_h1">사업정보</a>
                     <ul class="depth2">
-                        <li><a href="culture.html">팔레놉시스(호접란)</a></li>
-                        <li><a href="smartFarm.html">스마트팜용 크린 플랜츠(고추냉이)</a></li>
+                        <li><a href="culture.html">팔레놉시스</a></li>
+                        <li><a href="smartFarm.html">크린플렌츠</a></li>
                         <li><a href="aponicGarden.html">아포닉가든</a></li>
-                        <li><a href="oem.html">주문자 위탁 생산(OEM)</a></li>
-                        <li>
-                            <a href="upbringing.html">연구개발</a>
-                            <ul class="depth3">
-                                <li><a href="patent.html">특허</a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="#">최근 소식</a>
+                    <a href="lab.html" class="menu_h1">기술연구소</a>
                     <ul class="depth2">
-                        <li><a href="news.html">언론보도</a></li>
+                        <li><a href="upbringing.html">연구개발</a></li>
+                        <li><a href="patent.html">보유 특허</a></li>
+                        <li><a href="varieties.html">보유 품종</a></li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="#" target="_blank" class="point_link">아포닉가든 스토어</a>
+                    <a href="oem.html" class="menu_h1">주문자위탁생산(OEM)</a>
+                </li>
+
+                <li>
+                    <a href="news.html" class="menu_h1">최근소식</a>
+                </li>
+
+                <li>
+                    <p class="menu_h1">아포닉가든 스토어</p>
                     <ul class="depth2">
                         <li><a href="https://www.simpol.co.kr/front/minishop.php?sellvidx=302422679&NaPm=ct%3Dmmelw6wi%7Cci%3DERc1f69dc2%2D1932%2D11f1%2D813f%2Dfe791740dbec%7Ctr%3Dsa%7Chk%3De5e4b0255a328fcf01077cc38422570f92838d25%7Cnacn%3DcMZOBwgsZPa2"
                                 target="_blank">심폴 ↗</a></li>
@@ -88,138 +88,77 @@
         </div>
     </div>
 
-    <section class="visual about_visual">
+    <section class="visual smart_visual">
         <div class="visu_txt_wrap">
             <div class="visu_txt">
-                <strong class="ani">BUSINESS INFO</strong>
-                <p class="ani">유니플랜텍의 기술력과 지식재산권을 소개합니다.</p>
+                <strong class="ani">Business Fields</strong>
+                <p class="ani">첨단 바이오 기술로 농업의 새로운 가치를 창조합니다.</p>
             </div>
         </div>
     </section>
 
-    <main id="container" class="mainWrap">
+    <main class="tech_container">
+        <div class="container_inner">
 
-        <section class="mainSec tech_business">
-            <div class="inner">
-                <div class="sec_tit">
-                    <div class="left">
-                        <h2>사업 분야</h2>
-                        <p>스마트 농업 바이오 그룹, 유니플랜텍의 핵심 비즈니스입니다.</p>
-                    </div>
-                </div>
-
-                <div class="business_grid">
-                    <div class="b_item ani">
-                        <div class="b_img"><img src="img/business1.png" alt="조직배양"></div>
-                        <div class="b_txt">
-                            <strong>조직배양</strong>
-                            <p>바이러스 없는 우량 종묘를 무균 상태에서 대량 생산하여 농가에 고품질 식물체를 공급합니다.</p>
-                        </div>
-                    </div>
-                    <div class="b_item ani">
-                        <div class="b_img"><img src="img/business2.jpg" alt="신품종 육성"></div>
-                        <div class="b_txt">
-                            <strong>품종 육성</strong>
-                            <p>호접란 등 고부가가치 식물을 대상으로 유니플랜텍만의 독자적인 신품종을 연구하고 개발합니다.</p>
-                        </div>
-                    </div>
-                    <div class="b_item ani">
-                        <div class="b_img"><img src="img/business3.jpg" alt="스마트팜"></div>
-                        <div class="b_txt">
-                            <strong>스마트팜</strong>
-                            <p>ICT 융복합 기술을 활용한 첨단 재배 시스템을 통해 최적화된 식물 생육 환경을 구축합니다.</p>
-                        </div>
-                    </div>
-                    <div class="b_item ani">
-                        <div class="b_img"><img src="img/business4.jpg" alt="아포닉가든"></div>
-                        <div class="b_txt">
-                            <strong>아포닉가든</strong>
-                            <p>도심 속 미세먼지를 저감하고 심미적 가치를 더하는 실내 수직정원 솔루션을 제공합니다.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="sec_tit">
+                <h2>사업 정보</h2>
+                <p>유니플랜텍이 이끌어가는 미래 신성장 동력 핵심 기술과 사업 분야를 소개합니다.</p>
             </div>
-        </section>
 
-        <section class="mainSec tech_cert" style="background: #fbfbfb;">
-            <div class="inner">
-                <div class="sec_tit">
-                    <div class="left">
-                        <h2>지식재산권 현황</h2>
-                        <p>특허, 상표, 품종등록을 통해 보호받는 핵심 기술 자산입니다.</p>
+            <div class="tech_grid">
+
+                <div class="tech_card">
+                    <div class="card_img_box">
+                        <img src="img/business2.jpg" alt="팔레놉시스">
+                    </div>
+                    <div class="card_txt_box">
+                        <h3>팔레놉시스 (호접란)</h3>
+                        <p>우량 종묘의 조직배양을 통해 바이러스가 없는 고부가가치 신품종을 개발하고 대량 생산 시스템을 구축합니다.</p>
+                        <a href="culture.html" class="btn_more">자세히 보기</a>
                     </div>
                 </div>
 
-                <div class="cert_grid">
-                    <div class="cert_item breed ani">
-                        <div class="cert_content">
-                            <div class="cert_img">
-                                <img src="img/breed3.png" alt="유니웨딩 품종등록증">
-                                <span>품종등록증</span>
-                            </div>
-                            <div class="product_img">
-                                <img src="img/breedimg3.jpg" alt="유니웨딩 실물사진">
-                                <span>해당 품종 실물</span>
-                            </div>
-                        </div>
-                        <div class="cert_txt">
-                            <strong>품종등록</strong>
-                            <p>유니플랜텍이 직접 육성한 신품종에 대한 권리 증명</p>
-                        </div>
-                        <div class="more"><a href="breed.html">+ 더보기</a></div>
+                <div class="tech_card">
+                    <div class="card_img_box">
+                        <img src="img/business5.BMP" alt="크린플랜트">
                     </div>
-
-                    <div class="cert_item ani">
-                        <div class="cert_single_img">
-                            <img src="images/cert_patent.jpg" alt="특허증">
-                        </div>
-                        <div class="cert_txt">
-                            <strong>특허증</strong>
-                            <p>스마트팜 및 조직배양 자동화 기술 관련 특허</p>
-                        </div>
-                        <div class="more"><a href="patent.html">+ 더보기</a></div>
-                    </div>
-
-                    <div class="cert_item ani">
-                        <div class="cert_single_img">
-                            <img src="images/cert_brand.jpg" alt="상표증">
-                        </div>
-                        <div class="cert_txt">
-                            <strong>상표등록증</strong>
-                            <p>기업 및 고유 브랜드에 대한 상표권 확보</p>
-                        </div>
-                        <div class="more"><a href="brand.html">+ 더보기</a></div>
-                    </div>
-
-                    <div class="cert_item ani">
-                        <div class="cert_single_img">
-                            <img src="images/cert_apply.jpg" alt="출원서">
-                        </div>
-                        <div class="cert_txt">
-                            <strong>기술출원서</strong>
-                            <p>신규 개발 기술에 대한 우선권 확보 및 출원 진행</p>
-                        </div>
-                        <div class="more"><a href="apply.html">+ 더보기</a></div>
+                    <div class="card_txt_box">
+                        <h3>크린플랜트 (고추냉이)</h3>
+                        <p>ICT 융복합 스마트팜 재배 기술을 접목하여 서늘한 기후 특성에 맞는 무병묘(Clean Plants) 대량 순화 시설 및 양액 솔루션을 제공합니다.</p>
+                        <a href="smartFarm.html" class="btn_more">자세히 보기</a>
                     </div>
                 </div>
+
+                <div class="tech_card">
+                    <div class="card_img_box">
+                        <img src="img/aponicGarden.png" alt="아포닉가든">
+                    </div>
+                    <div class="card_txt_box">
+                        <h3>아포닉가든</h3>
+                        <p>도심 속 미세먼지를 저감하고 쾌적한 환경을 조성하는 실내 수직정원 시스템으로 식물공장 기술이 융합된 친환경 인테리어 가든입니다.</p>
+                        <a href="aponicGarden.html" class="btn_more">자세히 보기</a>
+                    </div>
+                </div>
+
             </div>
-        </section>
-
+        </div>
     </main>
 
     <footer class="footer">
         <div class="inner">
-            <h2>UNIPLANTECH</h2>
+            <h2><img src="img/logo_footer.png" alt="유니플랜텍"></h2>
             <div class="footer_info_wrap">
                 <ul class="info_left">
                     <li>농업회사법인 (주)유니플랜텍 | 대표이사 : 윤여중</li>
                     <li>본사 : 전북특별자치도 김제시 백산면 씨앗길 103</li>
-                    <li>TEL : 063-000-0000</li>
+                    <li>TEL : 0502-502-8817</li>
+                    <li>email : unie@hanmail.net</li>
                 </ul>
             </div>
             <p class="copy">Copyright &copy; 2026 Uniplantec. All Rights Reserved.</p>
         </div>
     </footer>
+
 
 </body>
 

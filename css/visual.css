@@ -1,7 +1,9 @@
 @charset "utf-8";
 
 /* 서브 비주얼 배경 설정 */
-.about_visual {
+.visual {
+    width: 100%;
+    margin-top: 80px;
     height: 50vh !important; /* 서브는 메인보다 낮게 */
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                 url('../images/sub_bg.jpg') no-repeat center/cover;

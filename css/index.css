@@ -14,23 +14,24 @@ img { max-width: 100%; height: auto; vertical-align: middle; }
     --bg-light: #f9f9f9;
 }
 
-/* 헤더 */
-.header { position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); transition: 0.3s; background: rgba(0,0,0,0.1); }
-.header_inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 80px; padding: 0 20px; }
-.logo_txt { font-weight: 700; font-size: 24px; color: #fff; letter-spacing: 2px; text-transform: uppercase; }
-
-.header_right { display: flex; align-items: center; gap: 20px; }
-.langBox a { display: inline-block; color: rgba(255,255,255,0.7); font-size: 14px; margin-left: 10px; }
-.langBox a.on { color: #fff; font-weight: 700; }
-.btn_all_menu span { display: block; width: 25px; height: 2px; background: #fff; margin-bottom: 5px; }
 
 /* 메인 비주얼 */
-.visual { height: 100vh; position: relative; overflow: hidden; }
+.visual { padding-top: 80px; height: 100vh; position: relative; overflow: hidden; }
+.visual::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 0.5는 어두운 정도 (0.1 ~ 0.9 사이로 조절 가능) */
+    z-index: 1; /* 배경 바로 위에 깔리도록 설정 */
+}
 .slider, .slider li { width: 100%; height: 100%; }
 .visu_txt_wrap { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; width: 100%; z-index: 10; padding: 0 20px; }
 .visu_txt strong { font-size: 60px; display: block; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; line-height: 1.2; }
 .visu_txt p { font-size: 20px; margin-bottom: 40px; font-weight: 300; color: rgba(255,255,255,0.8); }
-.visu_btn a { display: inline-block; padding: 15px 40px; border: 1px solid rgba(255,255,255,0.5); color: #fff; margin: 0 10px; transition: 0.3s; background: rgba(0,0,0,0.2); }
+.visu_btn a { display: inline-block; padding: 15px 40px; border: 1px solid rgba(255,255,255,0.5); color: #fff; margin: 10px 10px; transition: 0.3s; background: rgba(0,0,0,0.2); }
 .visu_btn a:hover { background: var(--point-green); border-color: var(--point-green); color: #fff; }
 
 @media (max-width: 768px) {
@@ -80,12 +81,9 @@ img { max-width: 100%; height: auto; vertical-align: middle; }
 .mainSec4 .swiper-button-next, .mainSec4 .swiper-button-prev { color: var(--main-green); background: rgba(255,255,255,0.8); width: 50px; height: 50px; border-radius: 50%; border: 1px solid #eee; box-shadow: 0 5px 10px rgba(0,0,0,0.05); }
 .mainSec4 .swiper-button-next:after, .mainSec4 .swiper-button-prev:after { font-size: 20px; font-weight: 700; }
 
-/* 푸터 */
-.footer { background: #111; color: #999; padding: 80px 0; border-top: 4px solid var(--point-green); }
-.footer h2 { font-weight: 700; font-size: 22px; color: #fff; letter-spacing: 2px; margin-bottom: 25px; }
-.footer_info_wrap { display: flex; margin-bottom: 30px; border-top: 1px solid #333; padding-top: 30px; }
-.info_left li { margin-bottom: 8px; font-size: 14px; font-weight: 300; }
-.copy { font-size: 13px; color: #666; font-weight: 300; letter-spacing: 0.5px; }
+/* 애니메이션 초기상태 (script.js의 aniMoving 연동) */
+.ani { opacity: 0; transform: translateY(50px); transition: 1s; }
+.ani.moving { opacity: 1; transform: translateY(0); }
 
 /* 모바일 대응 (간단) */
 @media (max-width: 1024px) {

@@ -142,6 +142,10 @@
     border-right: 1px solid rgba(255,255,255,0.3);
 }
 
+/* 애니메이션 초기상태 (script.js의 aniMoving 연동) */
+.ani { opacity: 0; transform: translateY(50px); transition: 1s; }
+.ani.moving { opacity: 1; transform: translateY(0); }
+
 /* --- 5. 반응형 --- */
 @media (max-width: 1024px) {
     .concept_grid {

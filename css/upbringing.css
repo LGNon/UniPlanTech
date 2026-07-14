@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+h2 { white-space: nowrap; }
+
 /* 서브 비주얼 배경 */
 .upbringing_visual {
     width: 100%;
@@ -10,6 +12,52 @@
     justify-content: center;
     text-align: center;
     color: #fff;
+}
+
+/* 머릿말 */
+/* PC 및 넓은 화면 기준 (기본 설정) */
+.up_overview .sec_tit {
+    display: flex;
+    justify-content: space-between; /* 양쪽 끝으로 밀착시켜 자연스러운 여백 확보 */
+    align-items: center;            /* 세로 기준 가운데 정렬 (정렬 방식을 바꾸려면 flex-start로 변경 가능) */
+    flex-wrap: wrap;                /* 화면이 아주 작아질 때를 대비 */
+    text-align: left;               /* 기존 center 정렬이었던 텍스트를 좌측 정렬로 변경 */
+    gap: 4%;                        /* 요소 사이의 최소 안전 여백 */
+}
+
+/* 1. 제목 (h2) - 가로폭 30% 설정 */
+.up_overview .sec_tit h2 {
+    flex: 0 0 30%;
+    width: 30%;
+    margin: 0;                      /* 브라우저 기본 마진 제거 */
+    font-size: 2.2rem;              /* 디자인에 맞춰 폰트 크기 조절 가능 */
+    line-height: 1.3;
+}
+
+/* 2. 설명글 (p) - 가로폭 60% 설정 */
+.up_overview .sec_tit p {
+    flex: 0 0 65%;
+    width: 65%;
+    margin: 0;                      /* 브라우저 기본 마진 제거 */
+    font-size: 1.1rem;              /* 디자인에 맞춰 폰트 크기 조절 가능 */
+    line-height: 1.6;
+    word-break: keep-all;           /* 한글 단어가 중간에 끊기지 않고 줄바꿈되도록 설정 */
+}
+
+/* 📱 모바일 및 태블릿 대응 (화면 너비 768px 이하) */
+@media (max-width: 768px) {
+    .up_overview .sec_tit {
+        flex-direction: column;     /* 모바일에서는 세로로 배치 */
+        align-items: flex-start;    /* 왼쪽 정렬 */
+        text-align: left;
+        gap: 20px;                  /* 위아래 간격 확보 */
+    }
+
+    .up_overview .sec_tit h2,
+    .up_overview .sec_tit p {
+        flex: 0 0 100%;             /* 모바일에서는 가로폭 100%를 다 쓰도록 변경 */
+        width: 100%;
+    }
 }
 
 /* 철학 섹션 */
@@ -103,6 +151,10 @@
     background: #ddd;
     margin: 0 auto 20px;
 }
+
+/* 애니메이션 초기상태 (script.js의 aniMoving 연동) */
+.ani { opacity: 0; transform: translateY(50px); transition: 1s; }
+.ani.moving { opacity: 1; transform: translateY(0); }
 
 /* --- 반응형 (태블릿/모바일) --- */
 @media (max-width: 1024px) {

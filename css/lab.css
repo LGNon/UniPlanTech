@@ -63,6 +63,266 @@
     word-break: keep-all;
 }
 
+/* ==========================================================================
+   유니플랜텍 기술연구소(lab.html) 전용 스타일 시트
+   ========================================================================== */
+
+/* [공통] 콘텐츠 텍스트 스타일 가독성 보강 */
+.sub_lead {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--main-green, #1a472a);
+    margin-bottom: 14px;
+    line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   [01번 & 05번 항목] 싱글 이미지 스타일 정의
+   ------------------------------------------------================---------- */
+.single_img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* lab5.BMP (1291x967 - 약 4:3 비율) 절대 잘림 방지 전용 상세 제어 */
+.lab5_container {
+    width: 100%;
+    background-color: #f8f9fa; /* 여백 발생 시 채워질 자연스러운 연그레이 배경 */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.lab5_container img {
+    width: 100%;
+    height: 100%;
+    /* 4:3 고유 비율을 완벽히 유지하면서 컨테이너 안에 꽉 차게 맞춰, 잘림을 완전 차단합니다 */
+    object-fit: contain; 
+}
+
+/* --------------------------------------------------------------------------
+   [02번 항목] 사진 4개 반응형 격자 레이아웃
+   -------------------------------------------------------------------------- */
+.grid_img_layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+}
+.grid_img_layout .img_thumb {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.grid_img_layout .img_thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   [03번 항목] 사진 2개 분할 배치 및 lab3_2 잘림 방지 레이아웃
+   -------------------------------------------------------------------------- */
+.double_img_layout {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .double_img_layout {
+        flex-direction: row;
+    }
+}
+.double_img_layout .img_thumb {
+    flex: 1;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+.double_img_layout .img_thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* lab3_2.BMP (1278x595 - 가로로 매우 긴 약 2:1 비율) 전용 원본 보존 맞춤형 코드 */
+.double_img_layout .contain_thumb {
+    background-color: #f8f9fa; /* 가로 가변 여백 발생 시 소프트 그레이 배경 채움 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+}
+.double_img_layout .contain_thumb img {
+    width: 100%;
+    height: 100%;
+    /* 가로가 넓은 2:1 와이드 원본 이미지 전체가 찌그러짐 없이 완벽하게 시각화되도록 보정합니다 */
+    object-fit: contain; 
+}
+
+/* --------------------------------------------------------------------------
+   [04번 항목] 순수 CSS 반응형 스크롤 스냅 슬라이더
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+    .lab_slider_section {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    .lab_slider_section .lab_txt {
+        width: 100% !important;
+        margin-bottom: 24px;
+    }
+    .lab_slider_section .slider_container {
+        width: 100% !important;
+    }
+}
+
+.slider_container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 16px;
+    scrollbar-width: thin;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+/* 슬라이더 스크롤바 디자인 */
+.slider_container::-webkit-scrollbar {
+    height: 6px;
+}
+.slider_container::-webkit-scrollbar-thumb {
+    background: var(--point-green, #8bc34a);
+    border-radius: 5px;
+}
+.slider_container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+.slider_wrapper {
+    display: flex;
+    gap: 16px;
+}
+.slide_card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    background: #fff;
+}
+.slide_card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+.slide_card:hover img {
+    transform: scale(1.04);
+}
+.slide_card .badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(26, 71, 42, 0.85);
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 20px;
+    backdrop-filter: blur(3px);
+    letter-spacing: -0.3px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.slider_guide_txt {
+    font-size: 13px;
+    color: #a0a0a0;
+    margin-top: 14px;
+    font-weight: 500;
+}
+
+/* PDF 열기 버튼 스타일 */
+.btn_pdf {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: var(--main-green, #1a472a);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+.btn_pdf:hover {
+    background-color: var(--point-green, #8bc34a);
+}
+
+/* 모달 배경 */
+.pdf-modal {
+    display: none; /* 기본값 숨김 */
+    position: fixed;
+    z-index: 2000; /* 헤더보다 위에 위치 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+}
+
+/* 모달 활성화 되었을 때 (JS로 제어) */
+.pdf-modal.active {
+    display: flex;
+}
+
+/* 모달 컨텐츠 박스 */
+.pdf-modal-content {
+    position: relative;
+    width: 85%;
+    max-width: 1000px;
+    height: 80vh;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    padding-top: 40px; /* 닫기 버튼 영역 확보 */
+}
+
+/* PDF iframe 스타일 */
+#pdfViewer {
+    width: 100%;
+    height: 100%;
+}
+
+/* 닫기 버튼 */
+.pdf-close {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    color: #333;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.pdf-close:hover {
+    color: var(--point-green, #8bc34a);
+}
+
+/* 애니메이션 초기상태 (script.js의 aniMoving 연동) */
+.ani { opacity: 0; transform: translateY(50px); transition: 1s; }
+.ani.moving { opacity: 1; transform: translateY(0); }
+
 /* 반응형 모바일 */
 @media (max-width: 1024px) {
     .lab_item, .lab_item.reverse {

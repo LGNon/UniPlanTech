@@ -221,6 +221,24 @@
     margin-bottom: 0;
 }
 
+/* 인사말 레이아웃 */
+.ceo_message {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.ceo_message .img_area { flex: 1; border-radius: 20px; overflow: hidden; }
+.ceo_message .txt_area { flex: 1.2; }
+.ceo_message .txt_area h4 { font-size: 30px; color: var(--main-green); margin-bottom: 20px; line-height: 1.4; }
+.ceo_message .txt_area p { font-size: 18px; color: var(--txt-gray); line-height: 1.8; }
+
+/* 애니메이션 초기상태 (script.js의 aniMoving 연동) */
+.ani { opacity: 0; transform: translateY(50px); transition: 1s; }
+.ani.moving { opacity: 1; transform: translateY(0); }
+
+
 /* 모바일 반응형 최적화 */
 @media (max-width: 768px) {
     .ceo-title {
@@ -237,6 +255,9 @@
     .project-card {
         padding: 18px;
     }
+    .ceo_message { flex-direction: column; gap: 30px; }
+    .ceo_message .txt_area h4 { font-size: 24px; }
+    .about_visual { height: 40vh !important; }
 }
 
 /* 반응형 */
