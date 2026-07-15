@@ -79,7 +79,8 @@
                             <li><a href="https://www.simpol.co.kr/front/minishop.php?sellvidx=302422679&NaPm=ct%3Dmmelw6wi%7Cci%3DERc1f69dc2%2D1932%2D11f1%2D813f%2Dfe791740dbec%7Ctr%3Dsa%7Chk%3De5e4b0255a328fcf01077cc38422570f92838d25%7Cnacn%3DcMZOBwgsZPa2"
                                     target="_blank">심폴 ↗</a></li>
                             <li><a href="https://smartstore.naver.com/aponics" target="_blank">네이버 스마트 스토어 ↗</a></li>
-                            <li><a href="https://www.housoop.com/mshop?page=1&searchMode=mshop&provider=72&per=40&sorting=ranking&filter_display=lattice&m=72" target="_blank">하우숩 ↗</a></li>
+                            <li><a href="https://www.housoop.com/mshop?page=1&searchMode=mshop&provider=72&per=40&sorting=ranking&filter_display=lattice&m=72"
+                                    target="_blank">하우숩 ↗</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -99,7 +100,7 @@
                         <a href="technology.html"><span>사업정보</span></a>
                         <a href="oem.html"><span>주문자위탁생산</span></a>
                         <a href="upbringing.html"><span>연구개발</span></a>
-                        <a href="news.html"><span>죄근소식</span></a>
+                        <a href="news.html"><span>최근소식</span></a>
                         <a href="https://smartstore.naver.com/aponics" target="_blank"><span>아포닉가든 스토어</span></a>
                     </div>
                 </div>
@@ -225,15 +226,24 @@
     <script>
         // Swiper 초기화
         var swiper = new Swiper(".listSlider", {
-            slidesPerView: 2,
-            spaceBetween: 30,
+            slidesPerView: 2,       /* 기본 2개 노출 */
+            spaceBetween: 30,      /* 카드 사이 간격 */
+            centeredSlides: false,  /* 왼쪽 정렬이 기본이므로, 2장만 있을 때 꽉 차게 보이도록 설정 */
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
             breakpoints: {
-                768: { slidesPerView: 2 },
-                200: { slidesPerView: 1 }
+                // 화면 너비가 768px 이상일 때
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40 /* 화살표와 겹치지 않게 여백을 살짝 늘려줄 수 있습니다 */
+                },
+                // 화면 너비가 768px 미만일 때 (모바일)
+                200: {
+                    slidesPerView: 1,
+                    spaceBetween: 15
+                }
             }
         });
     </script>

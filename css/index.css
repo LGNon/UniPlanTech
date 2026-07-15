@@ -78,8 +78,25 @@ img { max-width: 100%; height: auto; vertical-align: middle; }
 .news_card .mb_arrow { float: right; font-size: 13px; color: var(--point-green); font-weight: 700; }
 
 /* Swiper 버튼 커스텀 */
-.mainSec4 .swiper-button-next, .mainSec4 .swiper-button-prev { color: var(--main-green); background: rgba(255,255,255,0.8); width: 50px; height: 50px; border-radius: 50%; border: 1px solid #eee; box-shadow: 0 5px 10px rgba(0,0,0,0.05); }
+.mainSec4 .swiper-button-next, .mainSec4 .swiper-button-prev { color: var(--main-green); width: 50px; height: 50px; border-radius: 50%; }
 .mainSec4 .swiper-button-next:after, .mainSec4 .swiper-button-prev:after { font-size: 20px; font-weight: 700; }
+
+/* 1. Swiper 슬라이더들을 담는 부모 박스를 중앙 정렬(flex)로 설정 */
+.mainSec4 .listSlider .swiper-wrapper {
+    display: flex;
+    justify-content: center; /* 카드들을 가로축 기준 정중앙으로 모음 */
+    gap: 30px;
+}
+
+/* 2. 모바일 화면(768px 미만)에서는 카드가 1개씩 꽉 차서 정렬되도록 원래대로 원복 */
+@media (max-width: 768px) {
+    .mainSec4 .listSlider .swiper-wrapper {
+        display: flex;
+        justify-content: flex-start; /* 모바일에서는 왼쪽부터 부드럽게 넘어가도록 */
+    }
+}
+
+
 
 /* 애니메이션 초기상태 (script.js의 aniMoving 연동) */
 .ani { opacity: 0; transform: translateY(50px); transition: 1s; }
