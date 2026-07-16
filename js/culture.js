@@ -12,13 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "variety_card2": {
             title: "유니웨딩 (제3860호)",
-            fullImg: "img/breedimg2.jpg", // 유니웨딩 전체 사진 경로
-            certImg: "img/breed2.jpg"    // 유니웨딩 특허증 사진 경로
+            fullImg: "img/breedimg3.jpg", // 유니웨딩 전체 사진 경로
+            certImg: "img/breed3.png"    // 유니웨딩 특허증 사진 경로
         },
         "variety_card3": {
             title: "유니아마빌레 (제8359호)",
-            fullImg: "img/breedimg3.jpg", // 유니아마빌레 전체 사진 경로
-            certImg: "img/breed3.png"    // 유니아마빌레 특허증 사진 경로
+            fullImg: "img/breedimg2.jpg", // 유니아마빌레 전체 사진 경로
+            certImg: "img/breed2.jpg"    // 유니아마빌레 특허증 사진 경로
         }
     };
 

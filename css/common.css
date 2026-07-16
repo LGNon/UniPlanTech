@@ -106,6 +106,34 @@
     color: var(--main-green);
 }
 
+/* 로고와 SNS 영역을 가로로 정렬하고 세로 중앙을 맞춥니다 */
+.footer_top_group {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* 로고와 SNS 아이콘 그룹 사이의 간격 */
+    margin-bottom: 25px; /* 아래 회사 정보와의 간격 */
+}
+
+/* SNS 아이콘 정렬 박스 */
+.footer_sns {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* 블로그와 유튜브 아이콘 사이의 간격 */
+}
+
+/* 공통 아이콘 링크 스타일 */
+.footer_sns a img {
+    display: block;
+    height: 40px; /* 💡 화면에 표시될 세로 높이 (원하시는 크기로 자유롭게 조절하세요) */
+    width: auto;  /* 세로 높이에 맞춰 원본 비율(유튜브 176:124 / 블로그 1:1) 유지 */
+    transition: opacity 0.2s ease;
+}
+
+/* 마우스를 올렸을 때 효과 */
+.footer_sns a:hover img {
+    opacity: 0.8;
+}
+
 /* 모바일 대응: 화면을 더 많이 차지하도록 */
 @media (max-width: 768px) {
     .nav_full { width: 85%; } /* 모바일은 85% 정도로 크게 보이게 */
